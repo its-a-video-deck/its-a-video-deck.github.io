@@ -1,3 +1,5 @@
+import { story } from './story';
+
 export const languages = {
   en: 'English',
   fr: 'Français',
@@ -21,6 +23,7 @@ const en = {
     navAria: 'Main navigation',
     object: 'The object',
     signal: 'Signal path',
+    origin: 'Origin',
     journal: 'Build log',
     about: 'About',
     edition: 'EDITION 01 / 2026',
@@ -55,8 +58,9 @@ const en = {
     objectP1:
       'What if a video player felt like a piece of Hi-Fi again? Something you switch on, tune in and make room for.',
     objectP2:
-      'This project explores that idea through a restomod deck: the physical language of late-seventies electronics, a contemporary video source, and a connection back to analog television.',
+      'The deck I have in mind takes the body of a late-seventies cassette machine, a contemporary video source, and a way back to analog television.',
     objectCta: 'Inside the approach',
+    originCta: 'Read where it started',
     formKicker: '01 / FORM',
     formTitle: 'A familiar presence.',
     formText:
@@ -101,14 +105,15 @@ const en = {
     journalTitle: 'A project, in pieces.',
     journalCta: 'All project notes',
     journalNote:
-      'Initial project notes — design intentions and open questions, ready to grow into a build journal.',
-    aboutKicker: '05 / ABOUT THE PROJECT',
-    aboutTitle: 'Made out of curiosity.',
+      'These notes are intentions. The build log is where the technical choices, the making, the solutions, the successes and the failures will be written, once that work is ready to tell.',
+    aboutKicker: '05 / ORIGIN',
+    aboutTitle: 'Why this exists.',
     aboutP1:
-      'DIY Video Deck is an independent exploration of objects, interfaces and the way we watch. Part electronics project, part design exercise, part love letter to the equipment we grew up with.',
+      'I wanted to own the media again, and to give two working Sony televisions something other than snow. The first picture I wanted was Sade.',
     aboutP2:
-      'This is the notebook: the decisions, the experiments and the details along the way.',
-    aboutCta: 'Open the notebook',
+      'The reason has its own page. The build log is kept for the technical choices, the making, the solutions, the successes and the failures. That part is not written yet.',
+    aboutCta: 'Read the origin',
+    aboutJournalCta: 'Open the build log',
     stamp1: 'DESIGNED TO BE',
     stamp2: 'TAKEN APART.',
     stamp3: 'AND PUT BACK',
@@ -117,14 +122,15 @@ const en = {
   journal: {
     metaTitle: 'Build log — DIY Video Deck',
     metaDescription:
-      'Design intentions, hardware questions and software notes from the DIY Video Deck project.',
+      'The place kept for technical choices, the build, solutions, successes and failures. The notes here are still intentions.',
     back: '← BACK TO THE PROJECT',
-    marker: 'THE WORKBENCH / PROJECT NOTES',
-    aside: 'AN OPEN NOTEBOOK',
+    marker: 'THE WORKBENCH / STILL TO BE BUILT',
+    aside: 'CHOICES, SOLUTIONS, FAILURES',
     titleLine1: 'A project,',
     titleLine2: 'in pieces.',
-    intro1: 'Design decisions, experiments and things still to figure out.',
-    intro2: 'A record of the process, one detail at a time.',
+    intro1: 'This is where the making will be told.',
+    intro2: 'Choices, solutions, what worked and what failed. Not yet.',
+    originCta: 'Read the origin first',
     filterAria: 'Filter by category',
     searchLabel: 'Search project notes',
     searchPlaceholder: 'Search the notebook…',
@@ -133,7 +139,7 @@ const en = {
     emptyTitle: 'No matching notes.',
     emptyText: 'Try another word or explore a different category.',
     clearFilters: 'Clear filters ↗',
-    note: 'These initial notes document intentions, not completed tests or a verified hardware specification.',
+    note: 'These notes document intentions, not completed tests. Successes, failures and the solutions between them belong here once they exist.',
     cardKind: 'PROJECT NOTE',
     categories: [
       { id: 'All', label: 'All' },
@@ -211,6 +217,7 @@ const en = {
     Hardware: 'Hardware',
     Software: 'Software',
   },
+  story: story.en,
 };
 
 const fr = {
@@ -225,6 +232,7 @@ const fr = {
     navAria: 'Navigation principale',
     object: "L'objet",
     signal: 'Chemin du signal',
+    origin: 'Genèse',
     journal: 'Journal de bord',
     about: 'À propos',
     edition: 'ÉDITION 01 / 2026',
@@ -259,8 +267,9 @@ const fr = {
     objectP1:
       "Et si un lecteur vidéo avait à nouveau le caractère d'un appareil Hi-Fi ? Quelque chose que l'on allume, que l'on règle, et pour lequel on fait de la place.",
     objectP2:
-      "Ce projet explore cette idée à travers un deck restomod : le langage physique de l'électronique de la fin des années 1970, une source vidéo contemporaine, et un retour vers la télévision analogique.",
+      'Le deck que j’ai en tête prend le corps d’un appareil cassette de la fin des années 1970, une source vidéo contemporaine, et un retour vers la télévision analogique.',
     objectCta: "L'approche, de l'intérieur",
+    originCta: 'Lire d’où ça vient',
     formKicker: '01 / FORME',
     formTitle: 'Une présence familière.',
     formText:
@@ -305,14 +314,15 @@ const fr = {
     journalTitle: 'Un projet, en pièces.',
     journalCta: 'Toutes les notes de projet',
     journalNote:
-      'Notes initiales — intentions de design et questions ouvertes, prêtes à devenir un journal de construction.',
-    aboutKicker: '05 / À PROPOS DU PROJET',
-    aboutTitle: 'Fait par curiosité.',
+      'Ces notes sont des intentions. Le journal de bord est l’endroit où les choix techniques, la fabrication, les solutions, les succès et les échecs seront écrits, quand ce travail sera prêt à être raconté.',
+    aboutKicker: '05 / ORIGINE',
+    aboutTitle: 'Pourquoi ce projet.',
     aboutP1:
-      'DIY Video Deck est une exploration indépendante des objets, des interfaces et de notre façon de regarder. Un peu projet d’électronique, un peu exercice de design, un peu lettre d’amour aux appareils avec lesquels nous avons grandi.',
+      'Je voulais posséder à nouveau les médias, et donner à deux télés Sony qui fonctionnent autre chose que de la neige. La première image que je voulais, c’était Sade.',
     aboutP2:
-      'Voici le carnet : les décisions, les expériences et les détails en chemin.',
-    aboutCta: 'Ouvrir le carnet',
+      'La raison a sa propre page. Le journal de bord est gardé pour les choix techniques, la fabrication, les solutions, les succès et les échecs. Cette partie n’est pas encore écrite.',
+    aboutCta: 'Lire l’origine',
+    aboutJournalCta: 'Ouvrir le journal de bord',
     stamp1: 'CONÇU POUR ÊTRE',
     stamp2: 'DÉMONTÉ.',
     stamp3: 'ET REMIS',
@@ -321,14 +331,15 @@ const fr = {
   journal: {
     metaTitle: 'Journal de bord — DIY Video Deck',
     metaDescription:
-      'Intentions de design, questions matérielles et notes logicielles du projet DIY Video Deck.',
+      'La place gardée pour les choix techniques, la fabrication, les solutions, les succès et les échecs. Les notes ici sont encore des intentions.',
     back: '← RETOUR AU PROJET',
-    marker: 'L’ÉTABLI / NOTES DE PROJET',
-    aside: 'UN CARNET OUVERT',
+    marker: 'L’ÉTABLI / ENCORE À CONSTRUIRE',
+    aside: 'CHOIX, SOLUTIONS, ÉCHECS',
     titleLine1: 'Un projet,',
     titleLine2: 'en pièces.',
-    intro1: 'Décisions de design, expériences et choses encore à éclaircir.',
-    intro2: 'Un compte rendu du processus, un détail à la fois.',
+    intro1: 'C’est ici que la fabrication sera racontée.',
+    intro2: 'Les choix, les solutions, ce qui a marché et ce qui a raté. Pas encore.',
+    originCta: 'Lire d’abord l’origine',
     filterAria: 'Filtrer par catégorie',
     searchLabel: 'Rechercher dans les notes de projet',
     searchPlaceholder: 'Chercher dans le carnet…',
@@ -337,7 +348,7 @@ const fr = {
     emptyTitle: 'Aucune note correspondante.',
     emptyText: 'Essayez un autre mot ou une autre catégorie.',
     clearFilters: 'Effacer les filtres ↗',
-    note: 'Ces notes initiales documentent des intentions, non des essais terminés ni une spécification matérielle vérifiée.',
+    note: 'Ces notes documentent des intentions, pas des essais terminés. Les succès, les échecs et les solutions qui les séparent viendront ici quand ils existeront.',
     cardKind: 'NOTE DE PROJET',
     categories: [
       { id: 'All', label: 'Tous' },
@@ -415,6 +426,7 @@ const fr = {
     Hardware: 'Matériel',
     Software: 'Logiciel',
   },
+  story: story.fr,
 };
 
 export const ui = { en, fr };

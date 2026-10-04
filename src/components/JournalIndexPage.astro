@@ -13,6 +13,7 @@ const copy = useCopy(lang);
 const page = copy.journal;
 const entries = await getJournalEntries(lang);
 const homeHref = localizedPath(lang, '/');
+const storyHref = localizedPath(lang, '/story/');
 ---
 
 <Layout title={page.metaTitle} description={page.metaDescription}>
@@ -34,6 +35,9 @@ const homeHref = localizedPath(lang, '/');
       <br />
       {page.intro2}
     </p>
+    <a class="text-link journal-origin" href={storyHref}>
+      {page.originCta} <span>↗</span>
+    </a>
     <div class="journal-tools" id="journal-tools" hidden>
       <div class="filters" role="group" aria-label={page.filterAria}>
         {page.categories.map((category) => (

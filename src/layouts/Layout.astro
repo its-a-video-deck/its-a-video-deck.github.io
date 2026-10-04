@@ -26,8 +26,11 @@ const {
   pagePath = stripLocalePrefix(Astro.url.pathname),
 } = Astro.props;
 const homeHref = localizedPath(lang, '/');
+const storyHref = localizedPath(lang, '/story/');
 const journalHref = localizedPath(lang, '/journal/');
-const onJournal = stripLocalePrefix(Astro.url.pathname).startsWith('/journal/');
+const pagePathname = stripLocalePrefix(Astro.url.pathname);
+const onStory = pagePathname.startsWith('/story/');
+const onJournal = pagePathname.startsWith('/journal/');
 const localeHrefs = {
   en: localizedPath('en', pagePath),
   fr: localizedPath('fr', pagePath),
@@ -138,6 +141,9 @@ const canonicalPath = localizedAbsoluteUrl(lang, pagePath);
       <nav aria-label={copy.layout.navAria}>
         <a href={`${homeHref}#object`}>{copy.layout.object}</a>
         <a href={`${homeHref}#signal`}>{copy.layout.signal}</a>
+        <a href={storyHref} aria-current={onStory ? 'page' : undefined}>
+          {copy.layout.origin}
+        </a>
         <a href={journalHref} aria-current={onJournal ? 'page' : undefined}>
           {copy.layout.journal}
         </a>

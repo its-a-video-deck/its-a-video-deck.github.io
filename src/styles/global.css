@@ -267,6 +267,12 @@ h1 > span {
 .prose-intro .text-link {
   margin-top: 6px;
 }
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 36px;
+  align-items: flex-end;
+}
 .object-details {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -864,6 +870,59 @@ h1 > span {
 .article-body a {
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+.story-page {
+  max-width: 1080px;
+  padding-block: 35px 75px;
+}
+.article-header p.story-written {
+  margin: 0;
+  color: var(--amber);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.065em;
+  line-height: 1.5;
+}
+.story-section {
+  margin-top: 8px;
+}
+.story-figure {
+  width: min(920px, 100%);
+  margin: 8px auto 18px;
+}
+.story-figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.story-figure figcaption {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding-block: 13px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.065em;
+}
+.story-end {
+  align-items: flex-end;
+}
+.story-next {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  text-align: right;
+}
+.story-next p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.journal-origin {
+  margin: 8px 0 28px;
 }
 .article-end {
   border-top: 1px solid var(--line);

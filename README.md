@@ -28,6 +28,7 @@ npm run preview # Preview the production build
 ## Structure
 
 - `src/pages/index.astro` and `src/pages/fr/index.astro`: English and French homepages.
+- `src/pages/story/` and `src/pages/fr/story/`: origin essay. `/story/` is why the project exists. `/journal/` is reserved for how it gets made.
 - `src/pages/journal/` and `src/pages/fr/journal/`: searchable journal and generated article routes.
 - `src/content/journal/en/` and `src/content/journal/fr/`: editable Markdown project notes, one folder per language.
 - `src/i18n/`: UI copy, locale helpers and language detection.
@@ -66,9 +67,11 @@ Write the body below the frontmatter using ordinary Markdown. Images can be plac
 
 ## Editorial status
 
-The three initial articles describe project intentions and open questions. They are not reports of completed experiments. Their dates are editorial ordering metadata; update them when replacing the initial notes with real build records.
+The origin of the project is published at `/story/` and `/fr/story/`. It is a first-person account of why the deck exists, and it stops at the decision to use a Sony 186SD chassis. The drawings on that page are studies, not photographs.
 
-The hero is an AI-generated concept, explicitly captioned as such. It is not a photograph of the actual deck. Replace it with an original project image and update the alternative text, dimensions and caption in `src/pages/index.astro`.
+The journal is reserved for technical choices, the build, solutions, successes and failures. The three initial articles are still intentions and open questions, not reports of completed experiments. Their dates are editorial ordering metadata.
+
+The hero is an AI-generated concept, explicitly captioned as such. It is not a photograph of the actual deck. Replace it with an original project image and update the alternative text, dimensions and caption in `src/pages/index.astro`. The studies on the origin page are the same kind of placeholder: simple drawings, to be replaced with photographs when they exist.
 
 ## Interaction and accessibility
 

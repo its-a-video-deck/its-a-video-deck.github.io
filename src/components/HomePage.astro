@@ -11,6 +11,7 @@ import SignalPath from './SignalPath.astro';
 const lang = getLang(Astro.currentLocale);
 const copy = useCopy(lang).home;
 const entries = (await getJournalEntries(lang)).slice(0, 3);
+const storyHref = localizedPath(lang, '/story/');
 const journalHref = localizedPath(lang, '/journal/');
 ---
 
@@ -94,9 +95,14 @@ const journalHref = localizedPath(lang, '/journal/');
     <div class="prose-intro">
       <p>{copy.objectP1}</p>
       <p>{copy.objectP2}</p>
-      <a class="text-link" href="#process">
-        {copy.objectCta} <span>↗</span>
-      </a>
+      <div class="link-row">
+        <a class="text-link" href="#process">
+          {copy.objectCta} <span>↗</span>
+        </a>
+        <a class="text-link" href={storyHref}>
+          {copy.originCta} <span>↗</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="object-details">
@@ -196,9 +202,14 @@ const journalHref = localizedPath(lang, '/journal/');
     <h2>{copy.aboutTitle}</h2>
     <p>{copy.aboutP1}</p>
     <p>{copy.aboutP2}</p>
-    <a class="text-link" href={journalHref}>
-      {copy.aboutCta} <span>↗</span>
-    </a>
+    <div class="link-row">
+      <a class="text-link" href={storyHref}>
+        {copy.aboutCta} <span>↗</span>
+      </a>
+      <a class="text-link" href={journalHref}>
+        {copy.aboutJournalCta} <span>↗</span>
+      </a>
+    </div>
   </div>
   <div class="about-stamp micro">
     {copy.stamp1}

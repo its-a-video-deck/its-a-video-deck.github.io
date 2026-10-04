@@ -223,7 +223,8 @@
   .reference-header nav {
     margin-top: 18px;
     justify-content: space-between;
-    gap: 8px;
+    flex-wrap: wrap;
+    gap: 8px 14px;
     font-size: 13px;
   }
   .reference-hero {
