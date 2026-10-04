@@ -66,8 +66,6 @@ The three initial articles describe project intentions and open questions. They 
 
 The hero is an AI-generated concept, explicitly captioned as such. It is not a photograph of the actual deck. Replace it with an original project image and update the alternative text, dimensions and caption in `src/pages/index.astro`.
 
-The signal flow is illustrative. It does not assert a verified wiring diagram, selected conversion hardware, broadcast standard or calibrated frequency plan.
-
 ## Interaction and accessibility
 
 The journal combines category filters and text search, with an announced result count and a resettable empty state. The signal module uses native buttons to select a stage. All article content remains accessible without JavaScript; the signal module shows every stage and the journal shows every note in that case.
