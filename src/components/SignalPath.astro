@@ -1,0 +1,100 @@
+---
+const stages = [
+  {
+    name: 'Source',
+    device: 'Raspberry Pi',
+    detail: 'Digital, at the source.',
+    text: 'Local video files and playlists are the starting point. The Raspberry Pi is the planned playback and control centre, keeping the everyday experience independent of a network.',
+    tag: 'LOCAL MEDIA → PLAYBACK',
+  },
+  {
+    name: 'Video',
+    device: 'Baseband signal',
+    detail: 'A picture becomes a signal.',
+    text: 'The video output stage bridges digital playback and analog equipment. Its format, conversion path and timing need to be matched to the chosen modulator and television.',
+    tag: 'PLAYBACK → ANALOG VIDEO',
+  },
+  {
+    name: 'RF',
+    device: 'UHF modulator',
+    detail: 'Give the picture a channel.',
+    text: 'The modulator puts the video signal onto an RF channel. A wired antenna connection lets a compatible analog television tune to the deck as a local source.',
+    tag: 'ANALOG VIDEO → RF CHANNEL',
+  },
+  {
+    name: 'Display',
+    device: 'Analog television',
+    detail: 'Back on the air. In spirit.',
+    text: 'The television completes the experience: a real tuning control, a physical screen and a picture with character. The front-panel display is a separate interface for the deck itself.',
+    tag: 'ANTENNA INPUT → PICTURE',
+  },
+];
+---
+
+<div class="signal-module">
+  <div class="signal-top micro">
+    <span>
+      <i class="status-dot"></i> SYSTEM OVERVIEW
+    </span>
+    <span>PROPOSED ARCHITECTURE / REV. A</span>
+  </div>
+  <div class="signal-steps" role="group" aria-label="Explore the signal stages">
+    {stages.map((stage, index) => (
+      <button
+        type="button"
+        class="signal-step"
+        aria-pressed={index === 0 ? 'true' : 'false'}
+        aria-controls={`signal-panel-${index}`}
+        data-stage={index}
+      >
+        <span class="micro">0{index + 1}</span>
+        <strong>
+          {stage.name}
+          <span aria-hidden="true">{index < 3 ? '→' : '◉'}</span>
+        </strong>
+        <span>{stage.device}</span>
+      </button>
+    ))}
+  </div>
+  <div class="signal-details" aria-live="polite">
+    {stages.map((stage, index) => (
+      <div
+        id={`signal-panel-${index}`}
+        class="signal-detail"
+        data-panel={index}
+      >
+        <div>
+          <span class="micro">{stage.tag}</span>
+          <h3>{stage.detail}</h3>
+        </div>
+        <p>{stage.text}</p>
+      </div>
+    ))}
+  </div>
+  <div class="signal-bottom micro">
+    <span>SELECT A STAGE TO EXPLORE</span>
+    <span>ILLUSTRATIVE SIGNAL FLOW</span>
+  </div>
+</div>
+<script>
+  const buttons = Array.from(
+    document.querySelectorAll<HTMLButtonElement>('[data-stage]'),
+  );
+  const panels = Array.from(
+    document.querySelectorAll<HTMLElement>('[data-panel]'),
+  );
+  const needle = document.querySelector<HTMLElement>('.scale i');
+  function selectStage(index: number) {
+    buttons.forEach((button, current) =>
+      button.setAttribute('aria-pressed', String(current === index)),
+    );
+    panels.forEach((panel, current) => {
+      panel.hidden = current !== index;
+    });
+    if (needle) needle.style.left = `${[28, 42, 60, 80][index]}%`;
+  }
+  buttons.forEach((button, index) =>
+    button.addEventListener('click', () => selectStage(index)),
+  );
+  selectStage(0);
+</script>

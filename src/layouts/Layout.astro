@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+import '../styles/hero-reference.css';
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'DIY Video Deck — An analog state of mind',
+  description = 'An independent restomod video deck project. Old-school tactility, digital playback, and a new life for analog television.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f2f0e9" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
+    <header class="site-header reference-header">
+      <a class="reference-brand" href="/" aria-label="DIY Video Deck home">
+        VD<span class="red">/</span>
+        <span>ANALOG VIDEO LAB</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/#object">The object</a>
+        <a href="/#signal">Signal path</a>
+        <a
+          href="/journal/"
+          aria-current={
+            Astro.url.pathname.startsWith('/journal') ? 'page' : undefined
+          }
+        >
+          Build log
+        </a>
+        <a href="/#about">
+          About <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+      <span class="edition">EDITION 01 / 2026</span>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer wrap">
+      <a class="brand" href="/">
+        DIY VIDEO DECK<span class="status-dot" aria-hidden="true"></span>
+      </a>
+      <p>An independent project. A work in progress.</p>
+      <a href="#main">Back to top ↑</a>
+    </footer>
+  </body>
+</html>

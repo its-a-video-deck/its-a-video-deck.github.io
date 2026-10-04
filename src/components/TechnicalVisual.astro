@@ -1,0 +1,60 @@
+---
+interface Props {
+  variant: 'scale' | 'display' | 'signal';
+}
+const { variant } = Astro.props;
+---
+
+<div class:list={['technical-visual', `visual-${variant}`]} aria-hidden="true">
+  {variant === 'scale' && (
+    <div class="mini-tuner">
+      <div class="micro">
+        UHF <span>CHANNEL</span>
+      </div>
+      <div class="tuner-numbers">
+        <span>21</span>
+        <span>30</span>
+        <span>40</span>
+        <span>50</span>
+        <span>60</span>
+      </div>
+      <div class="tuner-ticks"></div>
+      <div class="tuner-needle"></div>
+      <div class="micro">
+        BAND IV / V <span>MHz</span>
+      </div>
+    </div>
+  )}
+  {variant === 'display' && (
+    <div class="mini-screen">
+      <div class="test-circle">
+        <span>
+          VIDEO
+          <br />
+          SIGNAL
+        </span>
+      </div>
+      <span class="screen-label">DISPLAY STUDY / 01</span>
+    </div>
+  )}
+  {variant === 'signal' && (
+    <div class="mini-signal">
+      <div class="micro">SYSTEM SEQUENCE</div>
+      <div class="boot-row">
+        <span>01</span>
+        <span>POWER</span>
+        <i></i>
+      </div>
+      <div class="boot-row">
+        <span>02</span>
+        <span>SOURCE</span>
+        <i></i>
+      </div>
+      <div class="boot-row">
+        <span>03</span>
+        <span>PICTURE</span>
+        <i></i>
+      </div>
+    </div>
+  )}
+</div>

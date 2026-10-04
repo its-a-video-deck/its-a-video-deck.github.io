@@ -1,0 +1,56 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import TechnicalVisual from '../../components/TechnicalVisual.astro';
+export async function getStaticPaths() {
+  const entries = await getCollection('journal', ({ data }) => !data.draft);
+  return entries.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+interface Props {
+  entry: CollectionEntry<'journal'>;
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout
+  title={`${entry.data.title} — DIY Video Deck`}
+  description={entry.data.description}
+>
+  <article class="article-page wrap">
+    <a href="/journal/" class="micro breadcrumb">
+      ← ALL PROJECT NOTES
+    </a>
+    <header class="article-header">
+      <div class="micro">
+        NOTE {entry.data.number} / {entry.data.category.toUpperCase()} / DESIGN
+        INTENT
+      </div>
+      <h1>{entry.data.title}</h1>
+      <p>{entry.data.description}</p>
+      <time class="micro" datetime={entry.data.date.toISOString()}>
+        NOTE CREATED{' '}
+        {entry.data.date.toISOString().slice(0, 10).replaceAll('-', '.')}
+      </time>
+    </header>
+    <figure class="article-visual">
+      <TechnicalVisual variant={entry.data.visual} />
+      <figcaption class="micro">
+        FIG. {entry.data.number} / ILLUSTRATIVE STUDY — NOT A MEASUREMENT
+      </figcaption>
+    </figure>
+    <div class="article-body">
+      <Content />
+    </div>
+    <div class="article-end">
+      <span class="micro">END OF NOTE / {entry.data.number}</span>
+      <a class="text-link" href="/journal/">
+        Back to the notebook <span>↗</span>
+      </a>
+    </div>
+  </article>
+</Layout>

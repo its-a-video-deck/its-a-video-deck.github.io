@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import TechnicalVisual from './TechnicalVisual.astro';
+interface Props {
+  entry: CollectionEntry<'journal'>;
+}
+const { entry } = Astro.props;
+---
+
+<article
+  class="journal-card"
+  data-category={entry.data.category}
+  data-title={`${entry.data.title} ${entry.data.description}`}
+>
+  <a href={`/journal/${entry.id}/`} class="journal-card-link">
+    <TechnicalVisual variant={entry.data.visual} />
+    <div class="card-meta micro">
+      <span>
+        {entry.data.number} / {entry.data.category}
+      </span>
+      <span>PROJECT NOTE</span>
+    </div>
+    <h3>
+      {entry.data.title}
+      <span aria-hidden="true">↗</span>
+    </h3>
+    <p>{entry.data.description}</p>
+  </a>
+</article>
