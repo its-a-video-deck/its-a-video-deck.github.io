@@ -1,0 +1,214 @@
+---
+import {
+  getLang,
+  getJournalEntries,
+  localizedPath,
+  useCopy,
+} from '../i18n/utils';
+import JournalCard from './JournalCard.astro';
+import SignalPath from './SignalPath.astro';
+
+const lang = getLang(Astro.currentLocale);
+const copy = useCopy(lang).home;
+const entries = (await getJournalEntries(lang)).slice(0, 3);
+const journalHref = localizedPath(lang, '/journal/');
+---
+
+<section class="hero reference-hero wrap" aria-labelledby="hero-title">
+  <div class="eyebrow">
+    <span>{copy.eyebrowKicker}</span>
+    <span>{copy.eyebrowEra}</span>
+  </div>
+  <div class="hero-title">
+    <h1 id="hero-title">
+      {copy.titleLine1}
+      <br />
+      {copy.titleLine2}
+      <span class="red">.</span>
+    </h1>
+    <div class="hero-intro">
+      <span class="tiny">{copy.tiny}</span>
+      <p>
+        {copy.intro1}
+        <br />
+        {copy.intro2}
+        <br />
+        {copy.intro3}
+      </p>
+      <a class="text-link" href="#object">
+        {copy.meetCta} <span>↓</span>
+      </a>
+    </div>
+  </div>
+  <figure class="hero-image">
+    <img
+      src="/images/deck-concept.png"
+      alt={copy.imageAlt}
+      width="1672"
+      height="941"
+      fetchpriority="high"
+    />
+    <div class="image-tag">
+      {copy.imageTag}
+      <br />
+      <span>{copy.imageTagSub}</span>
+    </div>
+    <figcaption>
+      <span>{copy.figLabel}</span>
+      <span>{copy.figNote}</span>
+    </figcaption>
+  </figure>
+  <div class="tuner" aria-hidden="true">
+    <span>{copy.tunerBand}</span>
+    <div class="scale">
+      <div class="numbers">
+        <span>21</span>
+        <span>25</span>
+        <span>30</span>
+        <span>35</span>
+        <span>40</span>
+        <span>45</span>
+        <span>50</span>
+        <span>60</span>
+      </div>
+      <i></i>
+    </div>
+    <span>{copy.tunerCaption}</span>
+  </div>
+  <div class="hero-foot micro">
+    <span>{copy.footLeft}</span>
+    <span class="amber-label">{copy.footStatus}</span>
+  </div>
+</section>
+<section id="object" class="editorial-section wrap">
+  <div class="section-marker micro">
+    <span>{copy.objectMarker}</span>
+    <span>{copy.objectAside}</span>
+  </div>
+  <div class="editorial-grid">
+    <h2>
+      {copy.objectTitle1}
+      <br />
+      {copy.objectTitle2}
+    </h2>
+    <div class="prose-intro">
+      <p>{copy.objectP1}</p>
+      <p>{copy.objectP2}</p>
+      <a class="text-link" href="#process">
+        {copy.objectCta} <span>↗</span>
+      </a>
+    </div>
+  </div>
+  <div class="object-details">
+    <div>
+      <span class="micro">{copy.formKicker}</span>
+      <h3>{copy.formTitle}</h3>
+      <p>{copy.formText}</p>
+    </div>
+    <div>
+      <span class="micro">{copy.functionKicker}</span>
+      <h3>{copy.functionTitle}</h3>
+      <p>{copy.functionText}</p>
+    </div>
+    <div>
+      <span class="micro">{copy.feelingKicker}</span>
+      <h3>{copy.feelingTitle}</h3>
+      <p>{copy.feelingText}</p>
+    </div>
+  </div>
+</section>
+<section id="signal" class="signal-section">
+  <div class="wrap">
+    <div class="section-marker micro">
+      <span>{copy.signalMarker}</span>
+      <span>{copy.signalAside}</span>
+    </div>
+    <div class="section-title">
+      <h2>
+        {copy.signalTitle1}
+        <br />
+        {copy.signalTitle2}
+      </h2>
+      <p>
+        {copy.signalLead1}
+        <br />
+        {copy.signalLead2}
+      </p>
+    </div>
+    <SignalPath />
+  </div>
+</section>
+<section id="process" class="editorial-section wrap">
+  <div class="section-marker micro">
+    <span>{copy.processMarker}</span>
+    <span>{copy.processAside}</span>
+  </div>
+  <div class="editorial-grid">
+    <h2>
+      {copy.processTitle1}
+      <br />
+      {copy.processTitle2}
+    </h2>
+    <p class="large-copy">{copy.processLead}</p>
+  </div>
+  <div class="process-grid">
+    <div>
+      <span class="process-number">{copy.keepNumber}</span>
+      <h3>{copy.keepTitle}</h3>
+      <p>{copy.keepText}</p>
+      <span class="micro">{copy.keepTag}</span>
+    </div>
+    <div>
+      <span class="process-number">{copy.replaceNumber}</span>
+      <h3>{copy.replaceTitle}</h3>
+      <p>{copy.replaceText}</p>
+      <span class="micro">{copy.replaceTag}</span>
+    </div>
+    <div>
+      <span class="process-number">{copy.addNumber}</span>
+      <h3>{copy.addTitle}</h3>
+      <p>{copy.addText}</p>
+      <span class="micro">{copy.addTag}</span>
+    </div>
+  </div>
+</section>
+<section class="journal-section wrap">
+  <div class="section-marker micro">
+    <span>{copy.journalMarker}</span>
+    <span>{copy.journalAside}</span>
+  </div>
+  <div class="section-title">
+    <h2>{copy.journalTitle}</h2>
+    <a class="text-link" href={journalHref}>
+      {copy.journalCta} <span>↗</span>
+    </a>
+  </div>
+  <div class="journal-grid">
+    {entries.map((entry) => (
+      <JournalCard entry={entry} />
+    ))}
+  </div>
+  <p class="editorial-note">{copy.journalNote}</p>
+</section>
+<section id="about" class="about-section wrap">
+  <span class="micro">{copy.aboutKicker}</span>
+  <div>
+    <h2>{copy.aboutTitle}</h2>
+    <p>{copy.aboutP1}</p>
+    <p>{copy.aboutP2}</p>
+    <a class="text-link" href={journalHref}>
+      {copy.aboutCta} <span>↗</span>
+    </a>
+  </div>
+  <div class="about-stamp micro">
+    {copy.stamp1}
+    <br />
+    {copy.stamp2}
+    <br />
+    <span>
+      {copy.stamp3}
+      <br />
+      {copy.stamp4}
+    </span>
+  </div>
+</section>

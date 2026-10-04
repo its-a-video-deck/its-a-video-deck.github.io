@@ -1,10 +1,17 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { getLang, journalSlug, localizedPath, useCopy } from '../i18n/utils';
 import TechnicalVisual from './TechnicalVisual.astro';
+
 interface Props {
   entry: CollectionEntry<'journal'>;
 }
+
 const { entry } = Astro.props;
+const lang = getLang(Astro.currentLocale);
+const copy = useCopy(lang);
+const category = copy.category[entry.data.category];
+const href = localizedPath(lang, `/journal/${journalSlug(entry)}/`);
 ---
 
 <article
@@ -12,13 +19,13 @@ const { entry } = Astro.props;
   data-category={entry.data.category}
   data-title={`${entry.data.title} ${entry.data.description}`}
 >
-  <a href={`/journal/${entry.id}/`} class="journal-card-link">
+  <a href={href} class="journal-card-link">
     <TechnicalVisual variant={entry.data.visual} />
     <div class="card-meta micro">
       <span>
-        {entry.data.number} / {entry.data.category}
+        {entry.data.number} / {category}
       </span>
-      <span>PROJECT NOTE</span>
+      <span>{copy.journal.cardKind}</span>
     </div>
     <h3>
       {entry.data.title}

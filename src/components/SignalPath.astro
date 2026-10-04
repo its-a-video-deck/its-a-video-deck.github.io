@@ -1,44 +1,18 @@
 ---
-const stages = [
-  {
-    name: 'Source',
-    device: 'Raspberry Pi',
-    detail: 'Digital, at the source.',
-    text: 'Local video files and playlists are the starting point. The Raspberry Pi is the planned playback and control centre, keeping the everyday experience independent of a network.',
-    tag: 'LOCAL MEDIA → PLAYBACK',
-  },
-  {
-    name: 'Video',
-    device: 'Baseband signal',
-    detail: 'A picture becomes a signal.',
-    text: 'The video output stage bridges digital playback and analog equipment. Its format, conversion path and timing need to be matched to the chosen modulator and television.',
-    tag: 'PLAYBACK → ANALOG VIDEO',
-  },
-  {
-    name: 'RF',
-    device: 'UHF modulator',
-    detail: 'Give the picture a channel.',
-    text: 'The modulator puts the video signal onto an RF channel. A wired antenna connection lets a compatible analog television tune to the deck as a local source.',
-    tag: 'ANALOG VIDEO → RF CHANNEL',
-  },
-  {
-    name: 'Display',
-    device: 'Analog television',
-    detail: 'Back on the air. In spirit.',
-    text: 'The television completes the experience: a real tuning control, a physical screen and a picture with character. The front-panel display is a separate interface for the deck itself.',
-    tag: 'ANTENNA INPUT → PICTURE',
-  },
-];
+import { getLang, useCopy } from '../i18n/utils';
+
+const copy = useCopy(getLang(Astro.currentLocale)).signal;
+const stages = copy.stages;
 ---
 
 <div class="signal-module">
   <div class="signal-top micro">
     <span>
-      <i class="status-dot"></i> SYSTEM OVERVIEW
+      <i class="status-dot"></i> {copy.overview}
     </span>
-    <span>PROPOSED ARCHITECTURE / REV. A</span>
+    <span>{copy.architecture}</span>
   </div>
-  <div class="signal-steps" role="group" aria-label="Explore the signal stages">
+  <div class="signal-steps" role="group" aria-label={copy.exploreAria}>
     {stages.map((stage, index) => (
       <button
         type="button"
@@ -72,8 +46,8 @@ const stages = [
     ))}
   </div>
   <div class="signal-bottom micro">
-    <span>SELECT A STAGE TO EXPLORE</span>
-    <span>ILLUSTRATIVE SIGNAL FLOW</span>
+    <span>{copy.select}</span>
+    <span>{copy.flow}</span>
   </div>
 </div>
 <script>

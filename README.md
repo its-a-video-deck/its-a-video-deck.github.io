@@ -2,7 +2,7 @@
 
 An editorial Astro website for the DIY Screen Video project. The design combines warm paper, neutral typography, service-manual details and restrained analog instrumentation.
 
-All source code, comments, documentation and initial website copy are in English.
+All source code, comments and documentation are in English. Website copy is available in English and French.
 
 ## Requirements
 
@@ -27,12 +27,13 @@ npm run preview # Preview the production build
 
 ## Structure
 
-- `src/pages/index.astro`: project homepage.
-- `src/pages/journal/`: searchable journal and generated article routes.
-- `src/content/journal/`: editable Markdown project notes.
+- `src/pages/index.astro` and `src/pages/fr/index.astro`: English and French homepages.
+- `src/pages/journal/` and `src/pages/fr/journal/`: searchable journal and generated article routes.
+- `src/content/journal/en/` and `src/content/journal/fr/`: editable Markdown project notes, one folder per language.
+- `src/i18n/`: UI copy, locale helpers and language detection.
 - `src/content.config.ts`: typed content schema.
 - `src/components/`: reusable journal cards, diagrams and interactive signal path.
-- `src/layouts/Layout.astro`: shared HTML, navigation and metadata.
+- `src/layouts/Layout.astro`: shared HTML, navigation, language switcher and metadata.
 - `src/styles/global.css`: responsive layout and visual system.
 - `src/styles/hero-reference.css`: masthead and homepage hero styling adapted from the first static HTML mockup; the Astro content and remaining page layouts are preserved.
 - `public/images/deck-concept.png`: generated concept image.
@@ -40,15 +41,18 @@ npm run preview # Preview the production build
 - `docs/art-direction.md`: original English visual brief recovered from the project conversation.
 - `docs/validation.md`: completed checks and the outstanding upstream dependency advisory.
 
+English URLs have no prefix (`/`, `/journal/`). French URLs use `/fr/`. The footer language selector stores a preference; on a first visit, the site follows the browser locale.
+
 ## Add a project note
 
-Create a Markdown file in `src/content/journal/`. Its filename becomes its URL, for example `front-panel.md` becomes `/journal/front-panel/`.
+Create a Markdown file in both `src/content/journal/en/` and `src/content/journal/fr/`. The filename becomes the shared URL slug, for example `front-panel.md` becomes `/journal/front-panel/` and `/fr/journal/front-panel/`.
 
 ```yaml
 ---
 title: 'Assembling the front panel'
 description: 'A short summary of the experiment.'
 date: 2026-10-03
+locale: en
 category: Hardware
 number: '04'
 visual: display

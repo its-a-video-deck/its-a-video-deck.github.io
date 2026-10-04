@@ -1,64 +1,201 @@
 ---
 import '../styles/global.css';
 import '../styles/hero-reference.css';
+import { localeStorageKey } from '../i18n/ui';
+import {
+  getLang,
+  localizedAbsoluteUrl,
+  localizedPath,
+  stripLocalePrefix,
+  useCopy,
+} from '../i18n/utils';
+
 interface Props {
   title?: string;
   description?: string;
+  localeRedirect?: boolean;
+  pagePath?: string;
 }
+
+const lang = getLang(Astro.currentLocale);
+const copy = useCopy(lang);
 const {
-  title = 'DIY Video Deck — An analog state of mind',
-  description = 'An independent restomod video deck project. Old-school tactility, digital playback, and a new life for analog television.',
+  title = copy.meta.title,
+  description = copy.meta.description,
+  localeRedirect = true,
+  pagePath = stripLocalePrefix(Astro.url.pathname),
 } = Astro.props;
+const homeHref = localizedPath(lang, '/');
+const journalHref = localizedPath(lang, '/journal/');
+const onJournal = stripLocalePrefix(Astro.url.pathname).startsWith('/journal/');
+const localeHrefs = {
+  en: localizedPath('en', pagePath),
+  fr: localizedPath('fr', pagePath),
+};
+const canonicalPath = localizedAbsoluteUrl(lang, pagePath);
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+  lang={lang}
+  data-locale={lang}
+  data-locale-en={localeHrefs.en}
+  data-locale-fr={localeHrefs.fr}
+  data-locale-redirect={localeRedirect ? 'true' : 'false'}
+  data-locale-key={localeStorageKey}
+>
   <head>
     <meta charset="UTF-8" />
+    <script is:inline>
+      (function () {
+        var root = document.documentElement;
+        var key = root.getAttribute('data-locale-key');
+        var current = root.getAttribute('data-locale');
+        var shouldRedirect =
+          root.getAttribute('data-locale-redirect') !== 'false';
+        var supported = ['en', 'fr'];
+        function readStored() {
+          try {
+            var value = localStorage.getItem(key);
+            return supported.indexOf(value) >= 0 ? value : null;
+          } catch (error) {
+            return null;
+          }
+        }
+        function detect() {
+          var list =
+            navigator.languages && navigator.languages.length
+              ? navigator.languages
+              : [navigator.language];
+          for (var i = 0; i < list.length; i += 1) {
+            var code = String(list[i] || '')
+              .toLowerCase()
+              .split('-')[0];
+            if (supported.indexOf(code) >= 0) return code;
+          }
+          return 'en';
+        }
+        var stored = readStored();
+        var preferred = stored || detect();
+        if (!stored) {
+          try {
+            localStorage.setItem(key, preferred);
+          } catch (error) {
+            /* private mode */
+          }
+        }
+        if (shouldRedirect && preferred && preferred !== current) {
+          var href = root.getAttribute('data-locale-' + preferred);
+          if (href) {
+            window.location.replace(href + window.location.hash);
+          }
+        }
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#f2f0e9" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_US'} />
+    <meta
+      property="og:locale:alternate"
+      content={lang === 'fr' ? 'en_US' : 'fr_FR'}
+    />
+    <link rel="canonical" href={canonicalPath} />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href={localizedAbsoluteUrl('en', pagePath)}
+    />
+    <link
+      rel="alternate"
+      hreflang="fr"
+      href={localizedAbsoluteUrl('fr', pagePath)}
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={localizedAbsoluteUrl('en', pagePath)}
+    />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{title}</title>
   </head>
   <body>
     <a class="skip-link" href="#main">
-      Skip to content
+      {copy.layout.skip}
     </a>
     <header class="site-header reference-header">
-      <a class="reference-brand" href="/" aria-label="DIY Video Deck home">
+      <a
+        class="reference-brand"
+        href={homeHref}
+        aria-label={copy.layout.homeAria}
+      >
         VD<span class="red">/</span>
         <span>ANALOG VIDEO LAB</span>
       </a>
-      <nav aria-label="Main navigation">
-        <a href="/#object">The object</a>
-        <a href="/#signal">Signal path</a>
-        <a
-          href="/journal/"
-          aria-current={
-            Astro.url.pathname.startsWith('/journal') ? 'page' : undefined
-          }
-        >
-          Build log
+      <nav aria-label={copy.layout.navAria}>
+        <a href={`${homeHref}#object`}>{copy.layout.object}</a>
+        <a href={`${homeHref}#signal`}>{copy.layout.signal}</a>
+        <a href={journalHref} aria-current={onJournal ? 'page' : undefined}>
+          {copy.layout.journal}
         </a>
-        <a href="/#about">
-          About <span aria-hidden="true">↗</span>
+        <a href={`${homeHref}#about`}>
+          {copy.layout.about} <span aria-hidden="true">↗</span>
         </a>
       </nav>
-      <span class="edition">EDITION 01 / 2026</span>
+      <span class="edition">{copy.layout.edition}</span>
     </header>
     <main id="main">
       <slot />
     </main>
     <footer class="site-footer wrap">
-      <a class="brand" href="/">
+      <a class="brand" href={homeHref}>
         DIY VIDEO DECK<span class="status-dot" aria-hidden="true"></span>
       </a>
-      <p>An independent project. A work in progress.</p>
-      <a href="#main">Back to top ↑</a>
+      <p>{copy.layout.tagline}</p>
+      <div class="footer-tools">
+        <nav class="lang-switch" aria-label={copy.layout.language}>
+          <a
+            href={localeHrefs.en}
+            lang="en"
+            hreflang="en"
+            data-set-locale="en"
+            aria-current={lang === 'en' ? 'true' : undefined}
+          >
+            English
+          </a>
+          <span class="lang-sep" aria-hidden="true">
+            /
+          </span>
+          <a
+            href={localeHrefs.fr}
+            lang="fr"
+            hreflang="fr"
+            data-set-locale="fr"
+            aria-current={lang === 'fr' ? 'true' : undefined}
+          >
+            Français
+          </a>
+        </nav>
+        <a href="#main">{copy.layout.backToTop}</a>
+      </div>
     </footer>
+    <script>
+      const key = document.documentElement.getAttribute('data-locale-key');
+      document.querySelectorAll('[data-set-locale]').forEach((link) => {
+        link.addEventListener('click', () => {
+          const locale = link.getAttribute('data-set-locale');
+          if (key && locale) {
+            try {
+              localStorage.setItem(key, locale);
+            } catch {
+              /* private mode */
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>

@@ -2,6 +2,7 @@
 title: 'From power to picture'
 description: 'Thinking through a startup sequence that feels like switching on an appliance.'
 date: 2026-10-01
+locale: en
 category: Software
 number: '03'
 visual: signal

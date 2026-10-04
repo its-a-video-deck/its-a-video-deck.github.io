@@ -2,6 +2,7 @@
 title: 'Drawing the UHF scale'
 description: 'Finding the balance between an instrument, an interface and a graphic detail.'
 date: 2026-10-03
+locale: en
 category: Design
 number: '01'
 visual: scale

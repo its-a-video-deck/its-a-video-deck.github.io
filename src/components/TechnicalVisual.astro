@@ -1,15 +1,19 @@
 ---
+import { getLang, useCopy } from '../i18n/utils';
+
 interface Props {
   variant: 'scale' | 'display' | 'signal';
 }
+
 const { variant } = Astro.props;
+const copy = useCopy(getLang(Astro.currentLocale)).visual;
 ---
 
 <div class:list={['technical-visual', `visual-${variant}`]} aria-hidden="true">
   {variant === 'scale' && (
     <div class="mini-tuner">
       <div class="micro">
-        UHF <span>CHANNEL</span>
+        UHF <span>{copy.channel}</span>
       </div>
       <div class="tuner-numbers">
         <span>21</span>
@@ -29,30 +33,30 @@ const { variant } = Astro.props;
     <div class="mini-screen">
       <div class="test-circle">
         <span>
-          VIDEO
+          {copy.video}
           <br />
-          SIGNAL
+          {copy.signal}
         </span>
       </div>
-      <span class="screen-label">DISPLAY STUDY / 01</span>
+      <span class="screen-label">{copy.displayStudy}</span>
     </div>
   )}
   {variant === 'signal' && (
     <div class="mini-signal">
-      <div class="micro">SYSTEM SEQUENCE</div>
+      <div class="micro">{copy.sequence}</div>
       <div class="boot-row">
         <span>01</span>
-        <span>POWER</span>
+        <span>{copy.power}</span>
         <i></i>
       </div>
       <div class="boot-row">
         <span>02</span>
-        <span>SOURCE</span>
+        <span>{copy.source}</span>
         <i></i>
       </div>
       <div class="boot-row">
         <span>03</span>
-        <span>PICTURE</span>
+        <span>{copy.picture}</span>
         <i></i>
       </div>
     </div>

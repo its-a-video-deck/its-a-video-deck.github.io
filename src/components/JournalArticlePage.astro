@@ -1,0 +1,58 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import { getLang, localizedPath, useCopy } from '../i18n/utils';
+import TechnicalVisual from './TechnicalVisual.astro';
+
+interface Props {
+  entry: CollectionEntry<'journal'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const lang = getLang(Astro.currentLocale);
+const copy = useCopy(lang);
+const article = copy.article;
+const category = copy.category[entry.data.category];
+const journalHref = localizedPath(lang, '/journal/');
+---
+
+<Layout
+  title={`${entry.data.title} — DIY Video Deck`}
+  description={entry.data.description}
+>
+  <article class="article-page wrap">
+    <a href={journalHref} class="micro breadcrumb">
+      {article.back}
+    </a>
+    <header class="article-header">
+      <div class="micro">
+        {article.noteLabel} {entry.data.number} / {category.toUpperCase()} /{' '}
+        {article.intent}
+      </div>
+      <h1>{entry.data.title}</h1>
+      <p>{entry.data.description}</p>
+      <time class="micro" datetime={entry.data.date.toISOString()}>
+        {article.created}{' '}
+        {entry.data.date.toISOString().slice(0, 10).replaceAll('-', '.')}
+      </time>
+    </header>
+    <figure class="article-visual">
+      <TechnicalVisual variant={entry.data.visual} />
+      <figcaption class="micro">
+        FIG. {entry.data.number} / {article.fig}
+      </figcaption>
+    </figure>
+    <div class="article-body">
+      <Content />
+    </div>
+    <div class="article-end">
+      <span class="micro">
+        {article.end} / {entry.data.number}
+      </span>
+      <a class="text-link" href={journalHref}>
+        {article.backCta} <span>↗</span>
+      </a>
+    </div>
+  </article>
+</Layout>

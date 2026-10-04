@@ -8,6 +8,7 @@ const journal = defineCollection({
     title: z.string(),
     description: z.string(),
     date: z.coerce.date(),
+    locale: z.enum(['en', 'fr']),
     category: z.enum(['Design', 'Hardware', 'Software']),
     number: z.string(),
     visual: z.enum(['scale', 'display', 'signal']),

@@ -1,10 +1,10 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import JournalArticlePage from '../../components/JournalArticlePage.astro';
-import { journalStaticPaths } from '../../i18n/utils';
+import JournalArticlePage from '../../../components/JournalArticlePage.astro';
+import { journalStaticPaths } from '../../../i18n/utils';
 
 export function getStaticPaths() {
-  return journalStaticPaths('en');
+  return journalStaticPaths('fr');
 }
 
 interface Props {

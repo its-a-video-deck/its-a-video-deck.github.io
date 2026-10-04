@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {
+  getLang,
+  getJournalEntries,
+  localizedPath,
+  useCopy,
+} from '../i18n/utils';
+import JournalCard from './JournalCard.astro';
+
+const lang = getLang(Astro.currentLocale);
+const copy = useCopy(lang);
+const page = copy.journal;
+const entries = await getJournalEntries(lang);
+const homeHref = localizedPath(lang, '/');
+---
+
+<Layout title={page.metaTitle} description={page.metaDescription}>
+  <section class="journal-page wrap">
+    <a href={homeHref} class="micro breadcrumb">
+      {page.back}
+    </a>
+    <div class="section-marker micro">
+      <span>{page.marker}</span>
+      <span>{page.aside}</span>
+    </div>
+    <h1>
+      {page.titleLine1}
+      <br />
+      <span>{page.titleLine2}</span>
+    </h1>
+    <p class="page-intro">
+      {page.intro1}
+      <br />
+      {page.intro2}
+    </p>
+    <div class="journal-tools" id="journal-tools" hidden>
+      <div class="filters" role="group" aria-label={page.filterAria}>
+        {page.categories.map((category) => (
+          <button
+            type="button"
+            data-filter={category.id}
+            aria-pressed={category.id === 'All' ? 'true' : 'false'}
+          >
+            {category.label}
+          </button>
+        ))}
+      </div>
+      <label class="search-label">
+        <span class="sr-only">{page.searchLabel}</span>
+        <input
+          id="journal-search"
+          type="search"
+          placeholder={page.searchPlaceholder}
+        />
+      </label>
+    </div>
+    <p
+      class="micro result-count"
+      id="result-count"
+      aria-live="polite"
+      data-one={page.countOne}
+      data-many={page.countMany}
+    >
+      {entries.length} {entries.length === 1 ? page.countOne : page.countMany}
+    </p>
+    <div class="journal-grid">
+      {entries.map((entry) => (
+        <JournalCard entry={entry} />
+      ))}
+    </div>
+    <div class="empty-state" id="empty-state" hidden>
+      <h2>{page.emptyTitle}</h2>
+      <p>{page.emptyText}</p>
+      <button type="button" id="reset-filters" class="text-link">
+        {page.clearFilters}
+      </button>
+    </div>
+    <p class="editorial-note">{page.note}</p>
+  </section>
+</Layout>
+<script>
+  const controls = document.getElementById('journal-tools');
+  const search = document.querySelector<HTMLInputElement>('#journal-search');
+  const filters = Array.from(
+    document.querySelectorAll<HTMLButtonElement>('[data-filter]'),
+  );
+  const cards = Array.from(
+    document.querySelectorAll<HTMLElement>('[data-category]'),
+  );
+  let category = 'All';
+  function updateResults() {
+    const query = search?.value.trim().toLowerCase() ?? '';
+    let count = 0;
+    cards.forEach((card) => {
+      const matches =
+        (category === 'All' || card.dataset.category === category) &&
+        (card.dataset.title ?? '').toLowerCase().includes(query);
+      card.hidden = !matches;
+      if (matches) count++;
+    });
+    filters.forEach((button) =>
+      button.setAttribute(
+        'aria-pressed',
+        String(button.dataset.filter === category),
+      ),
+    );
+    const countLabel = document.getElementById('result-count');
+    const emptyState = document.getElementById('empty-state');
+    const one = countLabel?.dataset.one ?? 'PROJECT NOTE';
+    const many = countLabel?.dataset.many ?? 'PROJECT NOTES';
+    if (countLabel)
+      countLabel.textContent = `${count} ${count === 1 ? one : many}`;
+    if (emptyState) emptyState.hidden = count !== 0;
+  }
+  filters.forEach((button) =>
+    button.addEventListener('click', () => {
+      category = button.dataset.filter ?? 'All';
+      updateResults();
+    }),
+  );
+  search?.addEventListener('input', updateResults);
+  document.getElementById('reset-filters')?.addEventListener('click', () => {
+    category = 'All';
+    if (search) search.value = '';
+    updateResults();
+    search?.focus();
+  });
+  if (controls) controls.hidden = false;
+</script>

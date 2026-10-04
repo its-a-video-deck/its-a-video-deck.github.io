@@ -2,6 +2,7 @@
 title: 'A new window on the deck'
 description: 'Exploring a repurposed Moto X display as the front panel’s visual centre.'
 date: 2026-10-02
+locale: en
 category: Hardware
 number: '02'
 visual: display

@@ -655,9 +655,35 @@ h1 > span {
   margin-left: 8px;
 }
 .site-footer p,
-.site-footer > a:last-child {
+.footer-tools a {
   font-size: 10px;
   color: var(--muted);
+}
+.footer-tools {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.lang-switch {
+  gap: 0;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.065em;
+}
+.lang-switch a {
+  padding: 7px 6px;
+  color: var(--muted);
+}
+.lang-switch a[aria-current='true'] {
+  color: var(--ink);
+}
+.lang-switch a:hover,
+.lang-switch a[aria-current='true']:hover {
+  color: var(--amber);
+}
+.lang-sep {
+  color: var(--line);
+  padding-inline: 2px;
 }
 .skip-link {
   position: absolute;
@@ -1135,6 +1161,9 @@ h1 > span {
     order: 3;
     width: 100%;
     font-size: 10px;
+  }
+  .footer-tools {
+    gap: 16px;
   }
   .journal-page {
     padding-bottom: 50px;
