@@ -8,6 +8,8 @@ const journalSchema = z.object({
   date: z.coerce.date(),
   locale,
   category: z.enum(['Design', 'Hardware', 'Software']),
+  entryType: z.enum(['intention', 'design-note']).default('intention'),
+  perspective: z.enum(['experience', 'implementation']).default('experience'),
   number: z.string(),
   visual: z.enum(['scale', 'display', 'signal']),
   draft: z.boolean().default(false),

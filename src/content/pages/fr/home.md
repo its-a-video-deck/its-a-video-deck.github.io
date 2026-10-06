@@ -36,7 +36,7 @@ object:
   points:
     - kicker: '01 / CONTENUS'
       title: 'Mes propres programmes.'
-      text: 'Des fichiers vidéo et des playlists pour retrouver des images de l’époque de ces appareils, à commencer par les clips de Sade.'
+      text: 'Chaque chaîne suit sa playlist et continue pendant que j’en regarde une autre. La musique est au centre de cette programmation, que je peux enrichir au fil du temps.'
     - kicker: '02 / COMMANDES'
       title: 'Les boutons en façade.'
       text: 'Je veux que les commandes restent au centre de l’usage, avec le toucher qui m’a donné envie de repartir d’un ancien deck.'
@@ -75,13 +75,13 @@ journal:
   aside: 'DESIGN / MATÉRIEL / LOGICIEL'
   title: 'Les premières pistes.'
   cta: 'Toutes les notes'
-  note: 'Les notes publiées présentent mes intentions pour l’échelle UHF, l’écran de façade et le démarrage.'
+  note: 'Les notes Expérience racontent les chaînes, les commandes et les écrans. Les fiches de réalisation technique viendront séparément.'
 about:
   kicker: '05 / À PROPOS'
   title: 'Un carnet pour suivre le projet.'
   paragraphs:
     - 'Je rassemble ici le récit et les notes de ce projet personnel, pour partager les choix qui lui donnent forme. On peut y suivre l’aventure ou y chercher des idées pour un projet proche.'
-    - 'La genèse raconte le chemin jusqu’au choix du châssis. Le journal est consacré au design, à l’électronique et au logiciel, au fil des sujets que je documente.'
+    - 'La genèse raconte le chemin jusqu’au choix du châssis. Le journal poursuit avec l’expérience de l’objet et les choix qui lui donnent forme.'
   originCta: 'Lire la genèse'
   journalCta: 'Parcourir le journal'
   stamp:

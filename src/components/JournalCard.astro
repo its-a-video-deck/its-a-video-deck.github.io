@@ -12,12 +12,22 @@ const lang = getLang(Astro.currentLocale);
 const copy = useCopy(lang);
 const category = copy.category[entry.data.category];
 const href = localizedPath(lang, `/journal/${journalSlug(entry)}/`);
+const searchText = [
+  entry.data.title,
+  entry.data.description,
+  category,
+  copy.perspectives[entry.data.perspective],
+  copy.entryTypes[entry.data.entryType],
+  entry.body ?? '',
+]
+  .join(' ')
+  .replace(/[#>*_\[\]()]/g, ' ');
 ---
 
 <article
   class="journal-card"
   data-category={entry.data.category}
-  data-title={`${entry.data.title} ${entry.data.description}`}
+  data-title={searchText}
 >
   <a href={href} class="journal-card-link">
     <TechnicalVisual variant={entry.data.visual} />
@@ -25,7 +35,10 @@ const href = localizedPath(lang, `/journal/${journalSlug(entry)}/`);
       <span>
         {entry.data.number} / {category}
       </span>
-      <span>{copy.journal.cardKind}</span>
+      <span>
+        {copy.perspectives[entry.data.perspective] ?? entry.data.perspective}{' '}
+        · {copy.entryTypes[entry.data.entryType] ?? entry.data.entryType}
+      </span>
     </div>
     <h3>
       {entry.data.title}

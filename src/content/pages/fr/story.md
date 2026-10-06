@@ -9,7 +9,7 @@ titleLine1: 'Le deck que Sony'
 titleLine2: 'n’a jamais fait.'
 dek: 'Je voulais regarder des clips de Sade sur mes vieilles télés Sony. Cette envie m’a conduit à imaginer un appareil pour la chaîne hi-fi, puis à choisir le châssis d’un deck cassette pour le construire.'
 end: 'FIN DE LA GENÈSE'
-nextText: 'Écran, échelle UHF, démarrage : les premières intentions sont dans le journal de bord.'
+nextText: 'Programmes, recherche de chaînes, écran : le journal poursuit avec l’expérience du deck.'
 nextCta: 'Ouvrir le journal de bord'
 figures:
   snow:

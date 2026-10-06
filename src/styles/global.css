@@ -576,11 +576,16 @@ h1 > span {
 .card-meta {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 12px;
   color: var(--muted);
   text-transform: uppercase;
   font-size: 9px;
   margin-top: 19px;
+}
+.card-meta > span {
+  white-space: nowrap;
 }
 .journal-card h3 {
   display: flex;
@@ -979,6 +984,9 @@ h1 > span {
     height: 190px;
   }
   .card-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
     font-size: 8px;
   }
   .journal-card h3 {

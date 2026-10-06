@@ -4,6 +4,8 @@ description: 'Le minimum qu’un écran de Moto X réemployé doit montrer, si l
 date: 2026-10-02
 locale: fr
 category: Hardware
+entryType: intention
+perspective: experience
 number: '02'
 visual: display
 ---

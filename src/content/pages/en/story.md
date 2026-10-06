@@ -9,7 +9,7 @@ titleLine1: 'The deck Sony'
 titleLine2: 'never made.'
 dek: 'I wanted to watch Sade videos on my old Sony televisions. That led me to imagine a unit for the hi-fi system, then choose a cassette-deck chassis to build it in.'
 end: 'END OF ORIGIN'
-nextText: 'The screen, the UHF scale, the startup sequence: the first intentions are in the build log.'
+nextText: 'Programmes, tuning, the screen: the journal continues with the experience of using the deck.'
 nextCta: 'Open the build log'
 figures:
   snow:

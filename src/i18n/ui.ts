@@ -10,6 +10,14 @@ export const defaultLang: Lang = 'en';
 export const localeStorageKey = 'video-deck-locale';
 
 const en = {
+  entryTypes: {
+    intention: 'Intention',
+    'design-note': 'Design note',
+  },
+  perspectives: {
+    experience: 'Experience',
+    implementation: 'Implementation',
+  },
   meta: {
     title: 'DIY Video Deck — An analog state of mind',
     description:
@@ -35,12 +43,11 @@ const en = {
     filterAria: 'Filter by category',
     searchLabel: 'Search project notes',
     searchPlaceholder: 'Search the notebook…',
-    countOne: 'INTENTION',
-    countMany: 'INTENTIONS',
+    countOne: 'NOTE',
+    countMany: 'NOTES',
     emptyTitle: 'No matching notes.',
     emptyText: 'Try another word or explore a different category.',
     clearFilters: 'Clear filters ↗',
-    cardKind: 'INTENTION',
     categories: [
       { id: 'All', label: 'All' },
       { id: 'Design', label: 'Design' },
@@ -50,7 +57,6 @@ const en = {
   },
   article: {
     back: '← ALL PROJECT NOTES',
-    intent: 'INTENTION',
     created: 'NOTE CREATED',
     fig: {
       scale: 'GRAPHIC STUDY · NOT A CALIBRATED SCALE',
@@ -79,6 +85,14 @@ const en = {
 };
 
 const fr = {
+  entryTypes: {
+    intention: 'Intention',
+    'design-note': 'Note de conception',
+  },
+  perspectives: {
+    experience: 'Expérience',
+    implementation: 'Réalisation',
+  },
   meta: {
     title: "DIY Video Deck — Un état d'esprit analogique",
     description:
@@ -104,12 +118,11 @@ const fr = {
     filterAria: 'Filtrer par catégorie',
     searchLabel: 'Rechercher dans les notes de projet',
     searchPlaceholder: 'Chercher dans le carnet…',
-    countOne: 'INTENTION',
-    countMany: 'INTENTIONS',
+    countOne: 'NOTE',
+    countMany: 'NOTES',
     emptyTitle: 'Aucune note correspondante.',
     emptyText: 'Essayez un autre mot ou une autre catégorie.',
     clearFilters: 'Effacer les filtres ↗',
-    cardKind: 'INTENTION',
     categories: [
       { id: 'All', label: 'Tous' },
       { id: 'Design', label: 'Design' },
@@ -119,7 +132,6 @@ const fr = {
   },
   article: {
     back: '← TOUTES LES NOTES DE PROJET',
-    intent: 'INTENTION',
     created: 'NOTE CRÉÉE',
     fig: {
       scale: 'ÉTUDE GRAPHIQUE · PAS UNE ÉCHELLE CALIBRÉE',

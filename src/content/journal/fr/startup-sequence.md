@@ -4,6 +4,8 @@ description: 'Le démarrage que je veux : un interrupteur, puis une image, sans 
 date: 2026-10-01
 locale: fr
 category: Software
+entryType: intention
+perspective: experience
 number: '03'
 visual: signal
 ---

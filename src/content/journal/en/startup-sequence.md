@@ -4,6 +4,8 @@ description: 'The startup I want: one switch, then a picture, without a keyboard
 date: 2026-10-01
 locale: en
 category: Software
+entryType: intention
+perspective: experience
 number: '03'
 visual: signal
 ---

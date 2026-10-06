@@ -36,7 +36,7 @@ object:
   points:
     - kicker: '01 / CONTENT'
       title: 'My own programmes.'
-      text: 'Video files and playlists to bring back images from the era of this equipment, starting with Sade music videos.'
+      text: 'Each channel follows its playlist and keeps going while I watch another. Music is at the centre of this programming, which I can keep adding to.'
     - kicker: '02 / CONTROLS'
       title: 'Buttons on the front.'
       text: 'I want the physical controls to remain central to using the deck, with the feel that made me want to start with an old machine.'
@@ -75,13 +75,13 @@ journal:
   aside: 'DESIGN / HARDWARE / SOFTWARE'
   title: 'The first ideas.'
   cta: 'All project notes'
-  note: 'The published notes set out my intentions for the UHF scale, front-panel screen and startup sequence.'
+  note: 'Experience notes describe the channels, controls and screens. Technical implementation articles will follow separately.'
 about:
   kicker: '05 / ABOUT'
   title: 'A notebook for the project.'
   paragraphs:
     - 'I am bringing the story and notes of this personal project together here to share the choices that shape it. You can follow along or look for ideas for a project of your own.'
-    - 'Origin follows the path to choosing the chassis. The build log covers design, electronics and software as I document each subject.'
+    - 'Origin follows the path to choosing the chassis. The journal continues with the experience of using the deck and the choices that shape it.'
   originCta: 'Read the origin'
   journalCta: 'Browse the build log'
   stamp:

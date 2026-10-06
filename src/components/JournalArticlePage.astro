@@ -14,6 +14,16 @@ const lang = getLang(Astro.currentLocale);
 const copy = useCopy(lang);
 const article = copy.article;
 const category = copy.category[entry.data.category];
+const perspectiveLabel = (
+  copy.perspectives[entry.data.perspective] ??
+  entry.data.perspective ??
+  ''
+).toUpperCase();
+const entryTypeLabel = (
+  copy.entryTypes[entry.data.entryType] ??
+  entry.data.entryType ??
+  ''
+).toUpperCase();
 const journalHref = localizedPath(lang, '/journal/');
 ---
 
@@ -27,8 +37,8 @@ const journalHref = localizedPath(lang, '/journal/');
     </a>
     <header class="article-header">
       <div class="micro">
-        {article.noteLabel} {entry.data.number} / {category.toUpperCase()} /{' '}
-        {article.intent}
+        {article.noteLabel} {entry.data.number} /{' '}
+        {perspectiveLabel} / {category.toUpperCase()} / {entryTypeLabel}
       </div>
       <h1>{entry.data.title}</h1>
       <p>{entry.data.description}</p>

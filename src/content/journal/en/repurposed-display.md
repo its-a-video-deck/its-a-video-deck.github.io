@@ -4,6 +4,8 @@ description: 'How little a reused Moto X screen needs to show, if the television
 date: 2026-10-02
 locale: en
 category: Hardware
+entryType: intention
+perspective: experience
 number: '02'
 visual: display
 ---
