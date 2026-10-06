@@ -4,24 +4,24 @@ locale: 'en'
 metaTitle: 'Origin — DIY Video Deck'
 metaDescription: 'Why this video deck exists: physical media, two Sony televisions showing snow, Sade, and the decision to reuse a cassette-deck chassis.'
 kicker: 'ORIGIN'
-written: 'ACCOUNT WRITTEN 2026.10.04'
+written: 'WRITTEN 2026.10.04 · REVISED 2026.10.06'
 titleLine1: 'The deck Sony'
 titleLine2: 'never made.'
-dek: 'I wanted my old televisions to show a picture again. The picture I wanted first was Sade.'
+dek: 'I wanted to watch Sade videos on my old Sony televisions. That led me to imagine a unit for the hi-fi system, then choose a cassette-deck chassis to build it in.'
 end: 'END OF ORIGIN'
-nextText: 'The build log takes the questions this page leaves open.'
+nextText: 'The screen, the UHF scale, the startup sequence: the first intentions are in the build log.'
 nextCta: 'Open the build log'
 figures:
   snow:
     alt: 'A simple drawing of a television screen filled with snow, marked as a study and not a photograph.'
     caption: 'FIG. 02 — SNOW, WHERE THE IDEA STARTS'
-    note: 'STUDY · NOT A PHOTOGRAPH OF THE TV-110'
+    note: 'GRAPHIC STUDY · SCREEN STATIC'
     screen: 'SNOW'
     set: 'TV-110 / WATCHMAN'
   shelf:
     alt: 'A simple plate listing Sade media already owned, and the video formats still missing.'
-    caption: 'FIG. 03 — ONE WORK, MANY OBJECTS'
-    note: 'STUDY · NOT A PHOTOGRAPH OF THE SHELF'
+    caption: 'FIG. 03 — ONE BODY OF WORK, MANY OBJECTS'
+    note: 'GRAPHIC STUDY · COLLECTION FORMATS'
     owned: 'ALREADY HERE'
     missing: 'STILL MISSING'
     have:
@@ -39,7 +39,7 @@ figures:
   path:
     alt: 'Three steps: a small button block, a Sony SB-500 set aside, and a 186SD chassis kept.'
     caption: 'FIG. 04 — HOW THE OBJECT CHANGED SHAPE'
-    note: 'STUDY · NOT A DRAWING OF A FINISHED DECK'
+    note: 'DIAGRAM · FORMS CONSIDERED'
     steps:
       - n: '01'
         title: 'A FEW BUTTONS'
@@ -53,62 +53,64 @@ figures:
   chassis:
     alt: 'A simple front-elevation study of a cassette-deck chassis with two meters and a screen area, labeled 186SD.'
     caption: 'FIG. 05 — THE 186SD, AS A VIDEO DECK'
-    note: 'STUDY · FRONT ELEVATION, NOT A PHOTOGRAPH'
+    note: 'CONCEPT STUDY · FRONT VIEW'
     meters: 'VU'
     screen: 'SCREEN'
     plate: '186SD'
 ---
 
-## Back to the machines
+## Returning to physical media and old equipment
 
-Lately I have wanted physical media again. I am not rejecting digital: what it opened up is extraordinary. The other side is that, apart from a phone or a computer, I no longer own the recordings I love.
+Wanting physical media again brought me back to old equipment. Digital access to music and films is extraordinary, but it gives me something different from having a collection at home. I wanted to own the things I love again and make room for them in the living room.
 
-Owning them used to mean leaving them visible in the room. Records, CDs, films. I liked searching and completing a shelf, and even the disappointment when an album was weaker than the previous one by the same artist. That brought me back to a Walkman and a Discman I already had, and then to buying older hi-fi.
+I thought about the pleasure of looking for a record, filling gaps in a collection, seeing CDs and films on a shelf. Even the disappointment of an album that fell short of the previous one was part of that experience. I found myself drawn back to the Walkmans and Discmans I had known, then began buying older hi-fi equipment.
 
-I love the look of the late 1970s and the early 1980s. The equipment is well made, and the advertisements of those years treated owning it as a status. The ranges were wide, and a technical step usually came with a real effort in design. That pairing feels rarer to me now. The machines still turn up second-hand, so putting them back in a living room is a choice I can actually make.
+I am particularly fond of equipment from the late 1970s and early 1980s, both its looks and its build quality. In the advertisements from those years, I see as much care for design as for technical progress, along with a sense of the place these objects were meant to have in a living room. That combination is what draws me back. With the equipment still available second-hand, I can make it part of everyday life again.
 
-## Snow
+## Working televisions, nothing but snow
 
-Along with the Walkmans, a receiver and cassette decks, I bought a first television: a Sony TV-110 UK. Aluminium, minimal, the style I wanted. Then Sony Watchmans. The first was an FD-210BE, and it is beautiful.
+The Walkmans, receiver and cassette decks were joined by a first television, a Sony TV-110 UK. I liked its aluminium front and minimal design. I also bought Sony Watchmans, starting with an FD-210BE that I find beautiful.
 
-They work. Terrestrial broadcasting has been off for years, so the screen is only snow. That was the trigger. I wanted to send my own programmes into these sets: pictures from their own period, and above all clips of Sade.
+These televisions work, but they no longer have analogue programmes to receive: all they show is snow. That made me want to send them my own content, putting together a stream of images from their era. The first things I wanted to watch on them were Sade music videos.
 
 {{figure:snow}}
 
-## The picture I wanted
+## Sade on those screens
 
-I have loved the music of Sade for as long as I can remember, and _Diamond Life_ is a beacon of those years. The work is already in the house, on almost every medium: vinyl, CD, cassette, MiniDisc, a book of sheet music, a concert programme, a postcard. I still do not have the VHS, the Betamax or the LaserDisc. I like that one piece of music could become so many objects.
+I have loved Sade’s music for as long as I can remember. For me, _Diamond Life_ is a touchstone of those years, and the band’s place in this project grows out of a collection I already have at home: vinyl, CDs, cassettes and MiniDisc, alongside a book of sheet music, a concert programme and a postcard. I am still missing the video formats: VHS, Betamax and LaserDisc.
 
-It fits the rest of the room. The first wish was concrete: play the clips on those screens.
+I like the way a body of work could take so many forms and become so many things to collect. Playing the videos on these televisions would be another way to make room for it at home, with images whose period and elegance fit the equipment around them.
 
 {{figure:shelf}}
 
-## From a few buttons to the SB-500
+## A place in the hi-fi system
 
-At first I pictured a small DIY block, a few buttons plugged into the television. The longer I thought about the project, the more I wanted an object that could have been sold at the time, and that would take its place in the hi-fi.
+At first, I imagined a small box with a few buttons, plugged into the television. As I thought about the project, I wanted to give it a form that belonged alongside the other equipment: something that could have appeared in a catalogue of the time and taken its place in the hi-fi system.
 
-I looked at building a small deck from scratch. I could not find switches with the feel of that period, and spare parts taken from old decks cost a fortune, so I would buy a machine and change it.
+I first considered making a miniature deck from scratch. But I could not find switches with the feel I was looking for, and parts salvaged from old decks seemed too expensive. Modifying an existing unit became the way forward.
 
-The Sony SB-500 looked right for that. It is a tape-recorder selector: four switches on the face, two rotary knobs, a compact case, a simple design. It is rare, it was sold only in Japan, and second-hand they go for more than €150. That is not how I want to build this. I want reuse. I did not want to take apart a machine other people still treat as valuable, or to spend the budget there.
+The Sony SB-500, a tape-recorder selector, seemed a good candidate: four switches on the front, two rotary knobs, a compact case and a simple design. But the second-hand examples I found cost more than €150. Between the price and my reluctance to alter a rare unit that other people still sought out, I moved away from the idea. I wanted to build with equipment I could give another use, and this choice did not fit the spirit of the project.
 
 {{figure:path}}
 
-## Two decks, and a seller
+## Two decks and a seller
 
-I already owned a Sony 188SD, bought to listen to, in good cosmetic shape. It still needed new belts, and the pause key seemed stuck. I was looking for a cheap donor, sold for parts, when a seller on eBay put up two other decks: another 188SD, and a Sony 186SD. I bid on the 186SD. That is the one I bought for the project. His 188SD had a broken pause key as well, nobody was bidding, and the price was at the floor.
+I already owned a Sony 188SD, bought for listening to cassettes. It was in very good cosmetic condition, but needed new belts and its pause key seemed stuck. I was looking for a cheap unit sold for parts that could serve as a donor.
 
-We got on. He could not find a buyer for his 188SD. Shipping would wait until the holidays were over and we were both back. I asked about that second 188SD, and he offered to send it with the 186SD for the same price. He could not keep them, and he did not want them thrown away. I told him about the project.
+During that search, I found an eBay seller auctioning two decks: another 188SD and a Sony 186SD. Neither had any bids, and the prices were very low. The seller’s 188SD also had a pause-key problem, though its key was broken. I bid on the 186SD and bought it for the project.
 
-Both machines arrived for less than €20.
+Shipping had to wait until we were both back from our holidays. As we exchanged messages, I asked what he planned to do with his 188SD, which had not found a buyer. He offered to include it with the 186SD for the same price: he could not keep both machines and did not want to throw them away. I told him about the project.
 
-## The chassis
+Both decks arrived for less than €20.
 
-The video deck will live in the chassis of the 186SD. It will still feed the television. It will also have its own screen, and the VU meters that already belong to that face.
+## The 186SD becomes the starting point
+
+I chose the 186SD chassis to house the video deck. The idea is still to send pictures to the old televisions, but the unit will also have its own screen alongside the VU meters on the front. The small box I first imagined now has a chassis and a place waiting for it in the hi-fi system.
 
 > The video deck Sony never made.
 
 {{figure:chassis}}
 
-## Why I am writing it down
+## Leaving a record
 
-I want to leave a trail: how this started, and later enough of the work for someone who wants to try something similar. AI tools are what made that feel possible. Without them this would probably have stayed the hobby of a lifetime, and one I would probably have dropped. The site is what I give in return.
+I want to keep a record of how this came about and share enough of the work for someone else to draw on. AI tools have made the project manageable for me. Without them, it would probably have taken a lifetime of spare hours, with a good chance of giving up along the way. Writing down what I learn here is my way of giving something back.

@@ -4,26 +4,26 @@ locale: 'fr'
 metaTitle: 'Genèse — DIY Video Deck'
 metaDescription: 'Pourquoi ce video deck existe : les supports physiques, deux télés Sony sur la neige, Sade, et le choix de réemployer un châssis de deck cassette.'
 kicker: 'GENÈSE'
-written: 'RÉCIT ÉCRIT LE 2026.10.04'
+written: 'ÉCRIT LE 2026.10.04 · RÉVISÉ LE 2026.10.06'
 titleLine1: 'Le deck que Sony'
 titleLine2: 'n’a jamais fait.'
-dek: 'Je voulais que mes vieilles télés montrent à nouveau une image. La première image que je voulais, c’était Sade.'
+dek: 'Je voulais regarder des clips de Sade sur mes vieilles télés Sony. Cette envie m’a conduit à imaginer un appareil pour la chaîne hi-fi, puis à choisir le châssis d’un deck cassette pour le construire.'
 end: 'FIN DE LA GENÈSE'
-nextText: 'Le journal de bord reprend les questions que cette page laisse ouvertes.'
+nextText: 'Écran, échelle UHF, démarrage : les premières intentions sont dans le journal de bord.'
 nextCta: 'Ouvrir le journal de bord'
 figures:
   snow:
     alt: 'Un dessin simple d’un écran de télévision rempli de neige, présenté comme une étude et non comme une photo.'
     caption: 'FIG. 02 — LA NEIGE, LÀ OÙ L’IDÉE COMMENCE'
-    note: 'ÉTUDE · PAS UNE PHOTO DE LA TV-110'
+    note: 'ÉTUDE GRAPHIQUE · NEIGE À L’ÉCRAN'
     screen: 'NEIGE'
     set: 'TV-110 / WATCHMAN'
   shelf:
     alt: 'Une planche simple des supports Sade déjà là, et des formats vidéo qui manquent encore.'
     caption: 'FIG. 03 — UNE ŒUVRE, PLUSIEURS OBJETS'
-    note: 'ÉTUDE · PAS UNE PHOTO DE L’ÉTAGÈRE'
+    note: 'ÉTUDE GRAPHIQUE · SUPPORTS DE LA COLLECTION'
     owned: 'DÉJÀ LÀ'
-    missing: 'ENCORE ABSENT'
+    missing: 'ENCORE ABSENTS'
     have:
       - 'VINYLE'
       - 'CD'
@@ -39,7 +39,7 @@ figures:
   path:
     alt: 'Trois étapes : un petit bloc de boutons, un Sony SB-500 écarté, et un châssis 186SD retenu.'
     caption: 'FIG. 04 — COMMENT L’OBJET A CHANGÉ DE FORME'
-    note: 'ÉTUDE · PAS LE DESSIN D’UN DECK FINI'
+    note: 'SCHÉMA · FORMES ENVISAGÉES'
     steps:
       - n: '01'
         title: 'QUELQUES BOUTONS'
@@ -53,62 +53,64 @@ figures:
   chassis:
     alt: 'Une élévation simple d’un châssis de deck cassette, avec deux vumètres et un emplacement d’écran, marquée 186SD.'
     caption: 'FIG. 05 — LE 186SD, EN TANT QUE VIDEO DECK'
-    note: 'ÉTUDE · ÉLÉVATION DE FAÇADE, PAS UNE PHOTO'
+    note: 'ÉTUDE DE CONCEPT · VUE DE FACE'
     meters: 'VU'
     screen: 'ÉCRAN'
     plate: '186SD'
 ---
 
-## Revenir aux appareils
+## Retrouver les supports, puis les appareils
 
-Ces derniers temps, l’envie des supports physiques est revenue. Je ne renie pas le numérique : ce qu’il a ouvert est exceptionnel. Le revers, c’est qu’à part un téléphone ou un ordinateur, je ne possède plus les enregistrements que j’aime.
+L’envie de retrouver des supports physiques m’a ramené vers les vieux appareils. Le numérique a ouvert un accès extraordinaire à la musique et aux films, mais cet accès ne me donne pas la même chose qu’une collection chez moi. J’avais envie de posséder à nouveau ce que j’aime et de lui faire une place dans le salon.
 
-Posséder voulait dire les laisser visibles dans la pièce. Disques, CD, films. J’aimais chercher, compléter une étagère, et même la déception d’un album moins bon que le précédent du même artiste. De là, je suis revenu à un Walkman et à un Discman que j’avais déjà, puis à l’achat de hi-fi plus ancienne.
+Je repensais au plaisir de chercher un disque, de compléter une collection, de voir les CD et les films sur une étagère. Même la déception d’un album moins bon que le précédent faisait partie de cette histoire. J’ai retrouvé l’envie des Walkman et des Discman que j’avais connus, puis j’ai commencé à acheter du matériel hi-fi ancien.
 
-J’aime l’allure de la fin des années 1970 et du début des années 1980. Les appareils sont bien faits, et les publicités de ces années-là montraient qu’en posséder un était un signe de statut. Les gammes étaient larges, et un progrès technique allait d’ordinaire avec un vrai travail de design. Cette association me semble plus rare aujourd’hui. Les appareils passent encore d’occasion : leur redonner une place dans le salon est un choix que je peux faire.
+Je suis particulièrement attaché aux appareils de la fin des années 1970 et du début des années 1980, à leur allure et à leur qualité de fabrication. Dans les publicités de l’époque, je vois autant le soin apporté au design que la promesse technique, et la place que ces objets devaient occuper dans un salon. C’est cette association que j’ai envie de retrouver. Comme ces appareils se trouvent encore d’occasion, je peux leur redonner une place dans mon quotidien.
 
-## La neige
+## Des télés qui n’affichent que de la neige
 
-En plus des Walkman, d’un ampli-tuner et de decks cassette, j’ai acheté une première télé : une Sony TV-110 UK. Aluminium, minimaliste, le style que je voulais. Puis des Sony Watchman. Le premier est un FD-210BE, et il est magnifique.
+Aux Walkman, à l’ampli-tuner et aux decks cassette s’est ajoutée une première télévision, une Sony TV-110 UK. Sa façade en aluminium et son dessin minimaliste me plaisaient. J’ai aussi acheté des Sony Watchman, en commençant par un FD-210BE que je trouve magnifique.
 
-Ils fonctionnent. L’hertzien est coupé depuis des années, et l’écran ne montre que de la neige. C’est de là que l’idée est partie. Je voulais envoyer mes propres programmes dans ces postes : des images de leur époque, et surtout des clips de Sade.
+Ces téléviseurs fonctionnent, mais ils n’ont plus de programmes analogiques à recevoir : à l’écran, il n’y a que de la neige. C’est ce qui m’a donné envie de leur envoyer mes propres contenus, de reconstituer un flux avec des images de leur époque. Les premières que je voulais y voir étaient les clips de Sade.
 
 {{figure:snow}}
 
-## L’image que je voulais
+## Sade sur ces écrans
 
-J’aime la musique de Sade depuis toujours, et _Diamond Life_ est un phare de ces années. L’œuvre est déjà chez moi, sur presque tous les supports : vinyle, CD, cassette, MiniDisc, un livre de partitions, un programme de concert, une carte postale. Il me manque encore la VHS, la Betamax et le LaserDisc. J’aime qu’une musique ait pu devenir autant d’objets.
+J’aime la musique de Sade depuis toujours. Pour moi, _Diamond Life_ est un phare de ces années, et la place du groupe dans le projet prolonge une collection déjà bien présente chez moi : vinyles, CD, cassettes, MiniDisc, mais aussi livre de partitions, programme de concert et carte postale. Il me manque encore les formats vidéo : VHS, Betamax et LaserDisc.
 
-Elle va avec le reste de la pièce. Le premier souhait était donc concret : passer les clips sur ces écrans.
+J’aime qu’une œuvre ait pu prendre autant de formes et devenir autant d’objets à collectionner. Passer les clips sur ces télés serait une autre manière de lui faire une place dans la pièce, avec des images dont l’époque et l’élégance s’accordent aux appareils qui les entourent.
 
 {{figure:shelf}}
 
-## De quelques boutons au SB-500
+## Un appareil à intégrer à la chaîne hi-fi
 
-Au début, j’imaginais un petit bloc : quelques boutons, branchés à la télé. Plus j’y pensais, plus je voulais un objet qui aurait pu être vendu à l’époque, et qui prendrait sa place dans la chaîne hi-fi.
+Au début, j’imaginais un petit boîtier avec quelques boutons, branché à la télé. À mesure que je pensais au projet, j’avais envie de lui donner une forme qui aille avec les autres appareils : un objet qui aurait pu figurer dans un catalogue de l’époque et trouver sa place dans la chaîne hi-fi.
 
-J’ai envisagé de construire un petit deck depuis zéro. Je n’ai pas trouvé d’interrupteurs qui aient le toucher de cette époque, et les pièces tirées de vieux decks coûtent une fortune. J’achèterais donc un appareil, et je le modifierais.
+J’ai d’abord envisagé de fabriquer une sorte de mini deck. Je n’ai cependant pas trouvé d’interrupteurs avec le toucher que je recherchais, et les pièces récupérées sur de vieux decks me semblaient trop chères. Modifier un appareil existant est alors devenu la piste à suivre.
 
-Le Sony SB-500 semblait convenir. C’est un sélecteur de magnétophones : quatre interrupteurs en façade, deux boutons rotatifs, un boîtier compact, une conception simple. Il est rare, il n’était vendu qu’au Japon, et d’occasion ils dépassent 150 €. Ce n’est pas comme ça que je veux construire. Je veux le réemploi. Je ne voulais pas démonter un appareil que d’autres tiennent encore pour précieux, ni mettre le budget là.
+Le Sony SB-500, un sélecteur de magnétophones, semblait bien s’y prêter : quatre interrupteurs en façade, deux boutons rotatifs, un boîtier compact et une conception simple. Mais les exemplaires d’occasion que je trouvais dépassaient 150 €. Entre le prix et la réticence à transformer un appareil rare, encore recherché par d’autres, je me suis éloigné de cette idée. Je voulais construire à partir de matériel à réemployer, et ce choix ne correspondait pas à l’esprit du projet.
 
 {{figure:path}}
 
-## Deux decks, et un vendeur
+## Deux decks et un vendeur
 
-Je possédais déjà un Sony 188SD, acheté pour l’écoute, en bon état visuel. Il lui fallait des courroies neuves, et la touche pause semblait coincée. Je cherchais un donneur peu cher, vendu pour pièces, quand un vendeur a mis aux enchères sur eBay deux autres decks : un second 188SD, et un Sony 186SD. J’ai enchéri sur le 186SD. C’est celui-là que j’ai acheté pour le projet. Le 188SD du vendeur avait lui aussi la touche pause cassée, personne n’enchérissait, et le prix était au plus bas.
+Je possédais déjà un Sony 188SD, acheté pour écouter des cassettes. Il était en très bon état visuel, mais avait besoin de courroies neuves et sa touche pause semblait coincée. Je cherchais donc un appareil peu cher, vendu pour pièces, qui pourrait servir de donneur.
 
-On a sympathisé. Il ne trouvait pas preneur pour son 188SD. L’envoi attendrait la fin des vacances, de part et d’autre. J’ai demandé pour ce second 188SD, et il a proposé de l’envoyer avec le 186SD, pour le même prix. Il ne pouvait pas les garder, et il ne voulait pas qu’ils finissent jetés. Je lui ai parlé du projet.
+C’est au cours de cette recherche que j’ai trouvé un vendeur proposant deux decks aux enchères sur eBay : un autre 188SD et un Sony 186SD. Personne n’enchérissait et les prix étaient au plus bas. Le 188SD du vendeur avait lui aussi un problème de touche pause, cassée sur celui-ci. J’ai enchéri sur le 186SD, que j’ai acheté pour le projet.
 
-Les deux appareils sont arrivés pour moins de 20 €.
+L’envoi devait attendre que nous soyons tous les deux rentrés de vacances. Pendant nos échanges, je lui ai demandé ce qu’il comptait faire de son 188SD, qui n’avait pas trouvé preneur. Il m’a proposé de le joindre au 186SD pour le même prix : il ne pouvait pas garder les deux appareils et ne voulait pas les mettre à la benne. Je lui ai parlé du projet.
 
-## Le châssis
+Les deux decks sont arrivés pour moins de 20 €.
 
-Le video deck prendra place dans le châssis du 186SD. Il alimentera toujours la télé. Il aura aussi son propre écran, et les vumètres qui appartiennent déjà à cette façade.
+## Le 186SD devient le point de départ
+
+J’ai retenu le châssis du 186SD pour y installer le video deck. L’idée reste d’envoyer des images aux vieilles télés, mais l’appareil aura aussi son propre écran, aux côtés des vumètres de la façade. Le petit boîtier imaginé au départ a désormais un châssis et une place prévue dans la chaîne hi-fi.
 
 > Le video deck que Sony n’a jamais fait.
 
 {{figure:chassis}}
 
-## Pourquoi je l’écris
+## Laisser une trace
 
-Je veux laisser une trace : comment ça a commencé, et plus tard assez du travail pour qui voudrait essayer quelque chose de proche. Les outils d’IA sont ce qui a rendu cela tenable. Sans eux, ce serait probablement resté le loisir d’une vie, et un loisir que j’aurais probablement lâché. Le site est ce que je rends en échange.
+J’ai envie de garder une trace de ce cheminement et de partager assez du travail pour que quelqu’un puisse s’en inspirer. Les outils d’IA ont rendu ce projet tenable pour moi. Sans eux, il aurait probablement fallu y consacrer une vie de loisirs, avec de fortes chances d’abandonner en route. Raconter ce que j’apprends ici est ma manière de donner quelque chose en retour.
