@@ -1,7 +1,7 @@
 ---
-import { getLang, useCopy } from '../i18n/utils';
+import { getLang, getPage } from '../i18n/utils';
 
-const copy = useCopy(getLang(Astro.currentLocale)).signal;
+const copy = (await getPage(getLang(Astro.currentLocale), 'signal')).data;
 const stages = copy.stages;
 ---
 
@@ -24,7 +24,9 @@ const stages = copy.stages;
         <span class="micro">0{index + 1}</span>
         <strong>
           {stage.name}
-          <span aria-hidden="true">{index < 3 ? '→' : '◉'}</span>
+          <span aria-hidden="true">
+            {index < stages.length - 1 ? '→' : '◉'}
+          </span>
         </strong>
         <span>{stage.device}</span>
       </button>
@@ -58,6 +60,7 @@ const stages = copy.stages;
     document.querySelectorAll<HTMLElement>('[data-panel]'),
   );
   const needle = document.querySelector<HTMLElement>('.scale i');
+  const positions = [28, 42, 60, 80];
   function selectStage(index: number) {
     buttons.forEach((button, current) =>
       button.setAttribute('aria-pressed', String(current === index)),
@@ -65,7 +68,10 @@ const stages = copy.stages;
     panels.forEach((panel, current) => {
       panel.hidden = current !== index;
     });
-    if (needle) needle.style.left = `${[28, 42, 60, 80][index]}%`;
+    if (needle) {
+      const position = positions[index] ?? positions[positions.length - 1];
+      needle.style.left = `${position}%`;
+    }
   }
   buttons.forEach((button, index) =>
     button.addEventListener('click', () => selectStage(index)),

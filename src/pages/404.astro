@@ -1,38 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { localizedPath, useCopy } from '../i18n/utils';
+import { getPage, localizedPath } from '../i18n/utils';
 
-const copy = useCopy('en').notFound;
-const copyFr = useCopy('fr').notFound;
+const copy = (await getPage('en', 'not-found')).data;
+const copyFr = (await getPage('fr', 'not-found')).data;
 const homeEn = localizedPath('en', '/');
 const homeFr = localizedPath('fr', '/');
 ---
 
 <Layout
-  title={copy.title}
+  title={copy.metaTitle}
   description={copy.text}
   localeRedirect={false}
   pagePath="/"
 >
   <section class="not-found wrap" data-not-found>
-    <div data-404-lang="en">
+    <div data-404-lang="en" data-title={copy.metaTitle}>
       <span class="micro">{copy.kicker}</span>
       <h1>
-        {copy.heading1}
+        {copy.headingLine1}
         <br />
-        {copy.heading2}
+        {copy.headingLine2}
       </h1>
       <p>{copy.text}</p>
       <a class="text-link" href={homeEn}>
         {copy.cta}
       </a>
     </div>
-    <div data-404-lang="fr" hidden>
+    <div data-404-lang="fr" data-title={copyFr.metaTitle} hidden>
       <span class="micro">{copyFr.kicker}</span>
       <h1>
-        {copyFr.heading1}
+        {copyFr.headingLine1}
         <br />
-        {copyFr.heading2}
+        {copyFr.headingLine2}
       </h1>
       <p>{copyFr.text}</p>
       <a class="text-link" href={homeFr}>
@@ -66,9 +66,11 @@ const homeFr = localizedPath('fr', '/');
   root.setAttribute('data-locale', lang);
   document.querySelectorAll('[data-404-lang]').forEach((panel) => {
     const panelLang = panel.getAttribute('data-404-lang');
-    (panel as HTMLElement).hidden = panelLang !== lang;
+    const visible = panelLang === lang;
+    (panel as HTMLElement).hidden = !visible;
+    if (visible) {
+      const title = panel.getAttribute('data-title');
+      if (title) document.title = title;
+    }
   });
-  if (lang === 'fr') {
-    document.title = 'Signal introuvable — DIY Video Deck';
-  }
 </script>

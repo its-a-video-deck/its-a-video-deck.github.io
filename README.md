@@ -30,8 +30,9 @@ npm run preview # Preview the production build
 - `src/pages/index.astro` and `src/pages/fr/index.astro`: English and French homepages.
 - `src/pages/story/` and `src/pages/fr/story/`: origin essay. `/story/` is why the project exists. `/journal/` is reserved for how it gets made.
 - `src/pages/journal/` and `src/pages/fr/journal/`: searchable journal and generated article routes.
+- `src/content/pages/en/` and `src/content/pages/fr/`: page copy (home, origin, journal introduction, signal path, 404). One Markdown file per page and language.
 - `src/content/journal/en/` and `src/content/journal/fr/`: editable Markdown project notes, one folder per language.
-- `src/i18n/`: UI copy, locale helpers and language detection.
+- `src/i18n/`: navigation, language switcher and other interface labels. Page prose lives in `src/content/`.
 - `src/content.config.ts`: typed content schema.
 - `src/components/`: reusable journal cards, diagrams and interactive signal path.
 - `src/layouts/Layout.astro`: shared HTML, navigation, language switcher and metadata.
@@ -43,6 +44,18 @@ npm run preview # Preview the production build
 - `docs/validation.md`: completed checks and the outstanding upstream dependency advisory.
 
 English URLs have no prefix (`/`, `/journal/`). French URLs use `/fr/`. The footer language selector stores a preference; on a first visit, the site follows the browser locale.
+
+## Edit a page
+
+Page prose lives in `src/content/pages/en/` and `src/content/pages/fr/`. Edit both languages. Navigation, the language switcher, journal filters and article chrome stay in `src/i18n/ui.ts`.
+
+| File           | Page                                                                                                                                                                                            |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `home.md`      | Homepage. Copy is in the frontmatter.                                                                                                                                                           |
+| `story.md`     | Origin essay. The frontmatter holds the title, deck and figure labels. The body is the essay: `##` starts a section, and `{{figure:snow}}` places a study (`snow`, `shelf`, `path`, `chassis`). |
+| `journal.md`   | Build-log introduction. The notes themselves stay in `src/content/journal/`.                                                                                                                    |
+| `signal.md`    | The four stages of the signal module on the homepage.                                                                                                                                           |
+| `not-found.md` | The 404 page.                                                                                                                                                                                   |
 
 ## Add a project note
 
@@ -71,7 +84,7 @@ The origin of the project is published at `/story/` and `/fr/story/`. It is a fi
 
 The journal is reserved for technical choices, the build, solutions, successes and failures. The three initial articles are still intentions and open questions, not reports of completed experiments. Their dates are editorial ordering metadata.
 
-The hero is an AI-generated concept, explicitly captioned as such. It is not a photograph of the actual deck. Replace it with an original project image and update the alternative text, dimensions and caption in `src/pages/index.astro`. The studies on the origin page are the same kind of placeholder: simple drawings, to be replaced with photographs when they exist.
+The hero is an AI-generated concept, explicitly captioned as such. It is not a photograph of the actual deck. Replace it with an original project image and update the alternative text, dimensions and caption in `src/content/pages/en/home.md` and `src/content/pages/fr/home.md`. The studies on the origin page are the same kind of placeholder: simple drawings, to be replaced with photographs when they exist.
 
 ## Interaction and accessibility
 

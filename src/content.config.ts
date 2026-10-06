@@ -1,19 +1,15 @@
 import { defineCollection } from 'astro:content';
-import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
+import { journalSchema, pagesSchema } from './content/schema';
 
 const journal = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/journal' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    date: z.coerce.date(),
-    locale: z.enum(['en', 'fr']),
-    category: z.enum(['Design', 'Hardware', 'Software']),
-    number: z.string(),
-    visual: z.enum(['scale', 'display', 'signal']),
-    draft: z.boolean().default(false),
-  }),
+  schema: journalSchema,
 });
 
-export const collections = { journal };
+const pages = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/pages' }),
+  schema: pagesSchema,
+});
+
+export const collections = { journal, pages };

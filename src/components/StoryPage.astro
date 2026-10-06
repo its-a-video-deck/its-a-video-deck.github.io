@@ -1,18 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import StoryFigure from './StoryFigure.astro';
-import { getLang, localizedPath, useCopy } from '../i18n/utils';
+import { getLang, getPage, localizedPath, useCopy } from '../i18n/utils';
+import { parseStoryMarkdown } from '../lib/story-markdown';
 
 const lang = getLang(Astro.currentLocale);
-const page = useCopy(lang).story;
+const entry = await getPage(lang, 'story');
+const page = entry.data;
+const sections = parseStoryMarkdown(entry.body ?? '');
 const homeHref = localizedPath(lang, '/');
 const journalHref = localizedPath(lang, '/journal/');
+const back = useCopy(lang).layout.backToProject;
 ---
 
 <Layout title={page.metaTitle} description={page.metaDescription}>
   <article class="story-page wrap">
     <a href={homeHref} class="micro breadcrumb">
-      {page.back}
+      {back}
     </a>
     <header class="article-header">
       <div class="micro">{page.kicker}</div>
@@ -24,22 +28,20 @@ const journalHref = localizedPath(lang, '/journal/');
       <p>{page.dek}</p>
       <p class="micro story-written">{page.written}</p>
     </header>
-    {
-      page.sections.map((section) => (
-        <section class="story-section">
-          <div class="article-body">
-            <h2>{section.heading}</h2>
-            {section.paragraphs.map((paragraph) => (
-              <p set:html={paragraph} />
-            ))}
-            {section.quote && <blockquote>{section.quote}</blockquote>}
-          </div>
-          {section.figure && (
-            <StoryFigure id={section.figure} figure={page.figures[section.figure]} />
-          )}
-        </section>
-      ))
-    }
+    {sections.map((section) => (
+      <section class="story-section">
+        <div class="article-body">
+          <h2>{section.heading}</h2>
+          <Fragment set:html={section.html} />
+        </div>
+        {section.figure && (
+          <StoryFigure
+            id={section.figure}
+            figure={page.figures[section.figure]}
+          />
+        )}
+      </section>
+    ))}
     <div class="article-end story-end">
       <span class="micro">{page.end}</span>
       <div class="story-next">

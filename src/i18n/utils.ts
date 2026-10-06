@@ -1,6 +1,20 @@
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 import { getAbsoluteLocaleUrl, getRelativeLocaleUrl } from 'astro:i18n';
 import { defaultLang, type Lang, ui, type Copy } from './ui';
+
+export const pageIds = [
+  'home',
+  'story',
+  'journal',
+  'signal',
+  'not-found',
+] as const;
+
+export type PageId = (typeof pageIds)[number];
+
+type PageEntry<T extends PageId> = CollectionEntry<'pages'> & {
+  data: Extract<CollectionEntry<'pages'>['data'], { page: T }>;
+};
 
 export function isLang(value: string | undefined): value is Lang {
   return value === 'en' || value === 'fr';
@@ -12,6 +26,22 @@ export function getLang(currentLocale: string | undefined): Lang {
 
 export function useCopy(lang: Lang): Copy {
   return ui[lang];
+}
+
+export async function getPage<T extends PageId>(
+  lang: Lang,
+  page: T,
+): Promise<PageEntry<T>> {
+  const entry = await getEntry('pages', `${lang}/${page}`);
+  if (!entry) {
+    throw new Error(`Missing src/content/pages/${lang}/${page}.md`);
+  }
+  if (entry.data.page !== page || entry.data.locale !== lang) {
+    throw new Error(
+      `src/content/pages/${lang}/${page}.md must set page: ${page} and locale: ${lang}`,
+    );
+  }
+  return entry as PageEntry<T>;
 }
 
 export function localizedPath(lang: Lang, path: string): string {

@@ -3,14 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import {
   getLang,
   getJournalEntries,
+  getPage,
   localizedPath,
   useCopy,
 } from '../i18n/utils';
 import JournalCard from './JournalCard.astro';
 
 const lang = getLang(Astro.currentLocale);
-const copy = useCopy(lang);
-const page = copy.journal;
+const copy = useCopy(lang).journal;
+const page = (await getPage(lang, 'journal')).data;
 const entries = await getJournalEntries(lang);
 const homeHref = localizedPath(lang, '/');
 const storyHref = localizedPath(lang, '/story/');
@@ -19,7 +20,7 @@ const storyHref = localizedPath(lang, '/story/');
 <Layout title={page.metaTitle} description={page.metaDescription}>
   <section class="journal-page wrap">
     <a href={homeHref} class="micro breadcrumb">
-      {page.back}
+      {copy.back}
     </a>
     <div class="section-marker micro">
       <span>{page.marker}</span>
@@ -31,16 +32,19 @@ const storyHref = localizedPath(lang, '/story/');
       <span>{page.titleLine2}</span>
     </h1>
     <p class="page-intro">
-      {page.intro1}
-      <br />
-      {page.intro2}
+      {page.intro.map((line, index) => (
+        <>
+          {index > 0 && <br />}
+          {line}
+        </>
+      ))}
     </p>
     <a class="text-link journal-origin" href={storyHref}>
       {page.originCta} <span>↗</span>
     </a>
     <div class="journal-tools" id="journal-tools" hidden>
-      <div class="filters" role="group" aria-label={page.filterAria}>
-        {page.categories.map((category) => (
+      <div class="filters" role="group" aria-label={copy.filterAria}>
+        {copy.categories.map((category) => (
           <button
             type="button"
             data-filter={category.id}
@@ -51,11 +55,11 @@ const storyHref = localizedPath(lang, '/story/');
         ))}
       </div>
       <label class="search-label">
-        <span class="sr-only">{page.searchLabel}</span>
+        <span class="sr-only">{copy.searchLabel}</span>
         <input
           id="journal-search"
           type="search"
-          placeholder={page.searchPlaceholder}
+          placeholder={copy.searchPlaceholder}
         />
       </label>
     </div>
@@ -63,10 +67,10 @@ const storyHref = localizedPath(lang, '/story/');
       class="micro result-count"
       id="result-count"
       aria-live="polite"
-      data-one={page.countOne}
-      data-many={page.countMany}
+      data-one={copy.countOne}
+      data-many={copy.countMany}
     >
-      {entries.length} {entries.length === 1 ? page.countOne : page.countMany}
+      {entries.length} {entries.length === 1 ? copy.countOne : copy.countMany}
     </p>
     <div class="journal-grid">
       {entries.map((entry) => (
@@ -74,10 +78,10 @@ const storyHref = localizedPath(lang, '/story/');
       ))}
     </div>
     <div class="empty-state" id="empty-state" hidden>
-      <h2>{page.emptyTitle}</h2>
-      <p>{page.emptyText}</p>
+      <h2>{copy.emptyTitle}</h2>
+      <p>{copy.emptyText}</p>
       <button type="button" id="reset-filters" class="text-link">
-        {page.clearFilters}
+        {copy.clearFilters}
       </button>
     </div>
     <p class="editorial-note">{page.note}</p>
