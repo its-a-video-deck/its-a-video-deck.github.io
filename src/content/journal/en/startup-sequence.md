@@ -1,6 +1,6 @@
 ---
 title: 'From power to picture'
-description: 'Thinking through a startup sequence that feels like switching on an appliance.'
+description: 'The startup I want: one switch, then a picture, without a keyboard or a network.'
 date: 2026-10-01
 locale: en
 category: Software
@@ -8,36 +8,10 @@ number: '03'
 visual: signal
 ---
 
-The desired experience begins with one physical action: switch on the deck. Everything that follows should make sense without a keyboard, a desktop or a network connection.
+I want one physical action: switch the deck on. After that I should be able to tell what is happening without a keyboard, a desktop, or a network connection.
 
-Behind that simple interaction are several separate systems. The Raspberry Pi needs to start, the playback software needs to become ready, and the front-panel display needs to communicate what is happening.
+Several things have to come up. The Raspberry Pi has to start, playback has to become ready, and the front-panel display has to say which of those is true. A lit screen is not the same thing as a picture I can play.
 
-## Think in states
+The order I am aiming at is: power on, start the control service, check the player and the display, load the selected local playlist, then show that it is ready. While that is unfinished, the display should say the deck is starting, and it should change once playback can actually respond. If something fails, I want a state I can read, not an animation that keeps going.
 
-A useful first model separates power, system readiness and playback readiness. A screen being lit does not necessarily mean that video playback is available.
-
-```text
-Power on
-  → Start the control service
-  → Check the player and display
-  → Load the selected local playlist
-  → Show the ready state
-```
-
-This is a proposed sequence, not an implemented boot specification. The actual order will depend on the hardware and the control interfaces selected for the build.
-
-## Make waiting understandable
-
-A restrained indicator can tell the user that the deck is starting. Once the player is ready, the interface should change clearly. A decorative animation should not imply readiness before the system can actually respond.
-
-If a component fails, the display needs a useful state instead of an endless startup animation.
-
-## Keep maintenance separate
-
-Everyday playback is intended to remain local and self-contained. A service interface can provide access to playlists, media and diagnostics when maintenance is needed.
-
-The website you are reading documents that idea; it is not the Deck Manager application and does not control any hardware.
-
-## Next step
-
-Measure startup behaviour on the selected hardware and record each transition. Those observations should guide the timing and feedback of the final interface.
+Day-to-day playback should stay local. A separate service screen can hold playlists, media and diagnostics when I need to maintain the machine. This website is not that screen, and it does not control the deck.

@@ -40,7 +40,7 @@ const journalHref = localizedPath(lang, '/journal/');
     <figure class="article-visual">
       <TechnicalVisual variant={entry.data.visual} />
       <figcaption class="micro">
-        FIG. {entry.data.number} / {article.fig}
+        FIG. {entry.data.number} / {article.fig[entry.data.visual]}
       </figcaption>
     </figure>
     <div class="article-body">

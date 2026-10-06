@@ -1,6 +1,6 @@
 ---
 title: 'Drawing the UHF scale'
-description: 'Finding the balance between an instrument, an interface and a graphic detail.'
+description: 'The tuning scale I want on the front panel, before the channel marks are committed.'
 date: 2026-10-03
 locale: en
 category: Design
@@ -8,29 +8,8 @@ number: '01'
 visual: scale
 ---
 
-A tuning scale does more than label a control. It gives a front panel a rhythm: long horizontal lines, small divisions and a single point of attention.
+I want the video function to read the way a television scale does: a band, a few channel marks, and one point that shows where you are. On this deck that scale has to sit on a cassette-deck face and look as if it belongs there.
 
-For this deck, the scale is a way to connect the new video function to the visual language of analog television. The challenge is to make it belong to the object without turning the whole panel into a decorative instrument.
+The numbers in the drawing are a graphic study. When I commit the labels, they have to follow the modulator and the television standard I actually use. What I am trying to settle is the hierarchy — the band name, the main marks, the small divisions — and whether an amber pointer is enough to show the selected place while the rest stays quiet. It has to be readable from where I would sit, not only in a close photograph.
 
-## Start with hierarchy
-
-Three levels should be enough: the band name, the main channel markings and the minor divisions. Their spacing matters as much as their type size. The scale needs to remain readable from the normal viewing position, not only in a close-up photograph.
-
-An amber indicator can establish the selected position. Other markings should stay quiet, letting the indicator do the work.
-
-> The detail should reward a closer look without demanding one.
-
-## A graphic study, not a frequency reference
-
-The scale shown here is an illustration. Final channel labels and frequencies must follow the selected modulator and television standard. A decorative scale should never be mistaken for a calibrated readout.
-
-The relationship between the control, its movement and the selected channel also needs to be decided before the panel artwork is finalised.
-
-## Next on the workbench
-
-- Print the artwork at its actual physical size.
-- Compare the markings against the other front-panel labels.
-- Check contrast behind the intended glass or acrylic.
-- Confirm the channel plan before producing permanent markings.
-
-This note records the design intention. A later entry can document the chosen dimensions, printing method and photographs of the result.
+Still in front of me: how the control’s movement maps to a channel, how the scale sits beside the other front-panel labels, and the contrast behind the glass or acrylic I end up using.
