@@ -42,7 +42,7 @@ object:
       text: 'I want the physical controls to remain central to using the deck, with the feel that made me want to start with an old machine.'
     - kicker: '03 / SCREENS'
       title: 'The TV and the deck.'
-      text: 'The television is still where the pictures are headed. The planned front-panel screen will give the deck an interface of its own.'
+      text: 'Alongside the televisions, the deck will have its own colour screen, designed to recapture the feel of a small CRT.'
 signal:
   marker: '02 / SIGNAL PATH'
   aside: 'FROM FILE TO ANTENNA INPUT'

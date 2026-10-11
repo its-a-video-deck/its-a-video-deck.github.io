@@ -42,7 +42,7 @@ object:
       text: 'Je veux que les commandes restent au centre de l’usage, avec le toucher qui m’a donné envie de repartir d’un ancien deck.'
     - kicker: '03 / ÉCRANS'
       title: 'La télé et le deck.'
-      text: 'La télévision reste la destination des images. L’écran prévu en façade donnera aussi au deck sa propre interface.'
+      text: 'Aux côtés des télés, le deck aura son propre écran couleur, pensé pour retrouver la sensation d’un petit CRT.'
 signal:
   marker: '02 / CHEMIN DU SIGNAL'
   aside: 'DU FICHIER À L’ENTRÉE ANTENNE'
