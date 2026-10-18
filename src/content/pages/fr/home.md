@@ -75,7 +75,7 @@ journal:
   aside: 'DESIGN / MATÉRIEL / LOGICIEL'
   title: 'Les premières pistes.'
   cta: 'Toutes les notes'
-  note: 'Les notes Expérience racontent les chaînes, les commandes et les écrans. Les fiches de réalisation technique viendront séparément.'
+  note: 'Les notes Expérience racontent les chaînes, les commandes et les écrans. Les fiches Réalisation détaillent les pièces et les essais qui leur donnent forme.'
 about:
   kicker: '05 / À PROPOS'
   title: 'Un carnet pour suivre le projet.'

@@ -44,11 +44,13 @@ Restait à donner à cet écran plat le relief que j’avais en tête.
 
 ## Le détour par les diapositives
 
-L’idée est venue des petites visionneuses de diapositives, ces boîtiers avec une ampoule qui permettaient de regarder une image agrandie. J’en trouvais facilement d’occasion, à des prix modestes. Dans les modèles que je regardais, plusieurs loupes étaient superposées à quelques millimètres de distance. Certaines avaient une forme proche du 4/3, qui me rappelait celle d’un petit écran de télévision.
+L’idée est venue des petites visionneuses de diapositives, ces boîtiers avec une ampoule qui permettaient de regarder une image agrandie. J’en trouvais facilement d’occasion, à des prix modestes. Selon le modèle, j’y trouvais une lentille seule ou plusieurs loupes superposées. Certaines avaient une forme proche du 4/3, qui me rappelait celle d’un petit écran de télévision.
 
 Ces pièces pouvaient donner au projet ce que le téléphone seul n’apportait pas. J’ai retenu l’idée de récupérer les loupes pour les placer devant son écran. Associées à la luminosité de l’OLED et à un travail sur le rendu de l’image, elles permettent de chercher cette impression de vitre bombée et ce piqué qui m’avaient d’abord orienté vers le CRT.
 
 C’est cette solution physique que j’ai validée pour le deck. Le but reste de m’approcher autant que possible de la sensation du tube. J’aime qu’elle réunisse deux objets qui n’étaient pas destinés à se rencontrer : un téléphone devenu ancien et une visionneuse de diapositives, chacun apportant une qualité utile à l’écran.
+
+Les essais de deux visionneuses, l’OPO puis le Panavue 9, et les contraintes de placement devant le téléphone sont détaillés dans [Retrouver le bombé avec une lentille](/fr/journal/curved-screen-lens/).
 
 ## Faire oublier le smartphone
 

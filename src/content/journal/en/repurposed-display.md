@@ -44,11 +44,13 @@ I still needed to give the flat screen the physical depth I had in mind.
 
 ## A detour through slide viewers
 
-The idea came from small slide viewers, the boxes with a lamp inside that let you look at a magnified photograph. I could readily find them second-hand at modest prices. In the models I was looking at, several magnifying lenses were stacked a few millimetres apart. Some had a shape close to 4:3, which reminded me of a small television screen.
+The idea came from small slide viewers, the boxes with a lamp inside that let you look at a magnified photograph. I could readily find them second-hand at modest prices. Depending on the model, I found either a single lens or several stacked magnifying lenses. Some had a shape close to 4:3, which reminded me of a small television screen.
 
 These pieces could bring something the phone alone did not provide. I settled on salvaging the lenses and placing them in front of its display. Combined with the OLED’s brightness and work on how the image is rendered, they offer a way to pursue the impression of curved glass and the particular crispness that first drew me towards a CRT.
 
 This is the physical approach I have validated for the deck. The aim remains to get as close as I can to the feel of a picture tube. I like that it brings together two objects that were never intended to meet: an ageing phone and a slide viewer, each contributing a useful quality to the screen.
+
+The trials with two viewers, the OPO and then the Panavue 9, and the constraints on placing them in front of the phone are described in [A lens for that curved-screen look](/journal/curved-screen-lens/).
 
 ## Letting the smartphone disappear
 

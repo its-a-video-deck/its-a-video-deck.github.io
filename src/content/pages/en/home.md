@@ -75,7 +75,7 @@ journal:
   aside: 'DESIGN / HARDWARE / SOFTWARE'
   title: 'The first ideas.'
   cta: 'All project notes'
-  note: 'Experience notes describe the channels, controls and screens. Technical implementation articles will follow separately.'
+  note: 'Experience notes describe the channels, controls and screens. Implementation articles cover the parts and trials that give them form.'
 about:
   kicker: '05 / ABOUT'
   title: 'A notebook for the project.'
